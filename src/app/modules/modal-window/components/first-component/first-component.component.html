@@ -1,0 +1,27 @@
+
+  <div class="xOTB-modal-header">
+    Modal 1 Header
+    <span class="xOTB-close" [innerHTML]="close" (click)="modal.hide()"></span>
+  </div>
+  <div class="xOTB-modal-body">
+    <div>Clicking outside or pressing Escape Key will not work.</div>
+    <div>Click on <span [innerHTML]="close"></span> or Close Button to close the First Modal Window.</div>
+    <div>Click on Save button to save the changes.</div>
+    <div>Click on Show Modal 2 to open second modal window on top of first.</div>
+    <br/>
+    <div>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+  </div>
+  <div class="xOTB-modal-footer">
+    <div [ngClass]="xOTB-buttonGroup">
+      <button type="button" class="xOTB-btn  xOTB-btn-autosize xOTB-btn-default" (click)="modal.hide()">Close</button>
+      <button type="button" class="xOTB-btn xOTB-btn-autosize xOTB-btn-default" (click)="modal2.show()">Show modal 2</button>
+      <button type="button" class="xOTB-btn  xOTB-btn-autosize xOTB-btn-primary" (click)="save()">Save</button>
+    </div>
+</div>
+<app-modal [buttonGroup]="buttonGroup" [current]="'modal2'" [previous]="'modal1'" #modal2>
+     <!-- Second Modal Component-->
+    <app-second-component [modal]="modal2"></app-second-component>
+</app-modal>
+   
