@@ -15,7 +15,7 @@ export class AccordionGroupComponent implements OnInit{
   /**
    * Text to display in the group title bar
    */
-  @Input() title: string;
+  @Input() title: string='accordion';
 
   @Input() description; string;
 

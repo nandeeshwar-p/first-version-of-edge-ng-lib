@@ -46,3 +46,11 @@
   .xOTB-icon::after {
     content: "\1F4C1";
   }
+
+  .xoTB-panel{
+    background: darkgray;
+  }
+
+  .xoTB-mat-expansion-panel-header{
+    flex-direction: row-reverse;
+  }
