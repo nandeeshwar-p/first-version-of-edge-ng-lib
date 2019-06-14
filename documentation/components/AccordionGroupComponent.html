@@ -323,6 +323,11 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;accordion&#x27;</code>
+                    </td>
+                </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
                                     <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/accordion-group/components/accordion/accordion-group.component.ts:18</a></div>
@@ -463,7 +468,7 @@ export class AccordionGroupComponent implements OnInit{
   /**
    * Text to display in the group title bar
    */
-  @Input() title: string;
+  @Input() title: string&#x3D;&#x27;accordion&#x27;;
 
   @Input() description; string;
 
@@ -493,7 +498,7 @@ export class AccordionGroupComponent implements OnInit{
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;xOTB-accordionPanel&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;div class&#x3D;&quot;xOTB-accordionPanel&quot;&gt;
     &lt;div class&#x3D;&quot;xOTB-titleBar&quot; (click)&#x3D;&quot;toggle.emit()&quot;&gt;
     &lt;span class&#x3D;&quot;xOTB-headerIcon&quot;&gt;&lt;i id &#x3D;&quot;iconclass&quot; class&#x3D;&quot;xOTB-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;
     &lt;span class&#x3D;&quot;xOTB-title&quot;&gt;{{title}} - {{description}}&lt;/span&gt;
@@ -502,7 +507,17 @@ export class AccordionGroupComponent implements OnInit{
     &lt;div class&#x3D;&quot;xOTB-body&quot; [ngClass]&#x3D;&quot;{&#x27;xOTB-hidden&#x27;: !opened}&quot;&gt;
       &lt;ng-content&gt;&lt;/ng-content&gt;
     &lt;/div&gt;
-  &lt;div&gt;</code></pre>
+  &lt;div&gt; --&gt;
+
+
+      &lt;mat-expansion-panel class&#x3D;&quot;xoTB-panel&quot;&gt;
+          &lt;mat-expansion-panel-header&gt;
+              &lt;mat-panel-title&gt;
+                &lt;h4&gt;{{title}}&lt;/h4&gt;
+              &lt;/mat-panel-title&gt;
+            &lt;/mat-expansion-panel-header&gt;
+          &lt;ng-content&gt;&lt;/ng-content&gt;
+        &lt;/mat-expansion-panel&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -556,6 +571,14 @@ export class AccordionGroupComponent implements OnInit{
 
   .xOTB-icon::after {
     content: &quot;\1F4C1&quot;;
+  }
+
+  .xoTB-panel{
+    background: darkgray;
+  }
+
+  .xoTB-mat-expansion-panel-header{
+    flex-direction: row-reverse;
   }</code></pre>
     </div>
 
@@ -584,7 +607,7 @@ export class AccordionGroupComponent implements OnInit{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="xOTB-accordionPanel">    <div class="xOTB-titleBar" (click)="toggle.emit()">    <span class="xOTB-headerIcon"><i id ="iconclass" class="xOTB-icon"></i></span>    <span class="xOTB-title">{{title}} - {{description}}</span>    <span class="xOTB-expandCollapseIcon"><i id ="expandcollpaseclass" [ngClass]="{\'xOTB-close\':opened,\'xOTB-open\':!opened}"></i></span>    </div>    <div class="xOTB-body" [ngClass]="{\'xOTB-hidden\': !opened}">      <ng-content></ng-content>    </div>  <div></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- <div class="xOTB-accordionPanel">    <div class="xOTB-titleBar" (click)="toggle.emit()">    <span class="xOTB-headerIcon"><i id ="iconclass" class="xOTB-icon"></i></span>    <span class="xOTB-title">{{title}} - {{description}}</span>    <span class="xOTB-expandCollapseIcon"><i id ="expandcollpaseclass" [ngClass]="{\'xOTB-close\':opened,\'xOTB-open\':!opened}"></i></span>    </div>    <div class="xOTB-body" [ngClass]="{\'xOTB-hidden\': !opened}">      <ng-content></ng-content>    </div>  <div> -->      <mat-expansion-panel class="xoTB-panel">          <mat-expansion-panel-header>              <mat-panel-title>                <h4>{{title}}</h4>              </mat-panel-title>            </mat-expansion-panel-header>          <ng-content></ng-content>        </mat-expansion-panel></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccordionGComponent', 'selector': 'app-accordion-group'},{'name': 'AccordionGroupComponent', 'selector': 'app-group'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContextMenuComponent', 'selector': 'app-context-menu'},{'name': 'DatePickerComponent', 'selector': 'app-date-picker'},{'name': 'DialogComponent', 'selector': 'app-widget-dialog'},{'name': 'DynamicFormComponent', 'selector': 'app-dynamic-creation'},{'name': 'DynamicFormElemComponent', 'selector': 'app-dynamic-form'},{'name': 'DynamicNgFormCrationFromJsonComponent', 'selector': 'app-form'},{'name': 'FirstComponentComponent', 'selector': 'app-first-component'},{'name': 'FormGeneratorComponent', 'selector': 'app-form-generator'},{'name': 'ImagemainComponent', 'selector': 'app-image'},{'name': 'ImageSliderComponent', 'selector': 'app-image-slider'},{'name': 'IndetreeComponent', 'selector': 'app-indetermine-tree'},{'name': 'MenuComponent', 'selector': 'app-context-root'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ModelComponent', 'selector': 'app-model'},{'name': 'MultiSelectValueExclusionComponent', 'selector': 'app-multi-select-value'},{'name': 'NumberInputComponent', 'selector': 'app-number-input'},{'name': 'PagComponent', 'selector': 'app-pagination'},{'name': 'PaginationComponent', 'selector': 'app-pagination-comp'},{'name': 'QuickDatePickerComponent', 'selector': 'app-quick-date-picker'},{'name': 'SecondComponentComponent', 'selector': 'app-second-component'},{'name': 'SpeedoMeterComponent', 'selector': 'app-speedo-meter'},{'name': 'SpeedometerMainComponent', 'selector': 'app-speedometer'},{'name': 'ThirdComponentComponent', 'selector': 'app-third-component'},{'name': 'TimePickerComponent', 'selector': 'app-time-picker'},{'name': 'ToggleButtonComponent', 'selector': 'app-toggle-button'},{'name': 'TreeNodeComponent', 'selector': 'app-tree-node'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AccordionGroupComponent'};

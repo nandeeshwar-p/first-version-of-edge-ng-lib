@@ -35,6 +35,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </a>
                         </li>
                         <li class="link">
+                            <a href="license.html"  data-type="chapter-link">
+                                <span class="icon ion-ios-paper"></span>LICENSE
+                            </a>
+                        </li>
+                        <li class="link">
                             <a href="dependencies.html" data-type="chapter-link">
                                 <span class="icon ion-ios-list"></span>Dependencies
                             </a>
@@ -55,13 +60,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AccordionGroupModule.html" data-type="entity-link">AccordionGroupModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AccordionGroupModule-f5020fa057f970ef5a916914bfc295a8"' : 'data-target="#xs-components-links-module-AccordionGroupModule-f5020fa057f970ef5a916914bfc295a8"' }>
+                                            'data-target="#components-links-module-AccordionGroupModule-a2e17446654fc19e6417ea8f310acf68"' : 'data-target="#xs-components-links-module-AccordionGroupModule-a2e17446654fc19e6417ea8f310acf68"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AccordionGroupModule-f5020fa057f970ef5a916914bfc295a8"' :
-                                            'id="xs-components-links-module-AccordionGroupModule-f5020fa057f970ef5a916914bfc295a8"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AccordionGroupModule-a2e17446654fc19e6417ea8f310acf68"' :
+                                            'id="xs-components-links-module-AccordionGroupModule-a2e17446654fc19e6417ea8f310acf68"' }>
                                             <li class="link">
                                                 <a href="components/AccordionComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AccordionComponent</a>
@@ -213,6 +218,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="modules/DateRangePickerModule.html" data-type="entity-link">DateRangePickerModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/DemoMaterialModule.html" data-type="entity-link">DemoMaterialModule</a>
                             </li>
                             <li class="link">
                                 <a href="modules/DialogComponentModule.html" data-type="entity-link">DialogComponentModule</a>
