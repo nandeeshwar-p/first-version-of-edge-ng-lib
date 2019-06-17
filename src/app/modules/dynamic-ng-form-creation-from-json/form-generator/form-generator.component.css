@@ -1,0 +1,82 @@
+    .xOTB-jumbotron{
+    padding: 5%;
+    margin:3% 25% 3% 25%;
+    background-color: #e9ecef;
+    } 
+    .xOTB-text-center{
+    text-align: center;
+    }
+    .xOTB-mrg{
+      margin: 0 25% 0 25%;
+    }
+    .xOTB-mx-auto {
+        margin-left: auto!important;
+    }
+    .xOTB-mx-auto {
+        margin-right: auto!important;
+    }
+    .xOTB-m-2 {
+        margin: .5rem!important;
+    }
+    .xOTB-card {
+        /* position: relative; */
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+    }
+    
+    .xOTB-form-inline {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .xOTB-form-group {
+        margin-bottom: 1rem;
+    }
+    .xOTB-col-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .xOTB-form-control {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .xOTB-col-4 {
+        -ms-flex: 0 0 40%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .xOTB-d-flex{
+      display: flex;
+    }
+    .xOTB-btn{
+     width: 100px;
+    } 
+    .xOTB-btn-primary{
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    
+    
