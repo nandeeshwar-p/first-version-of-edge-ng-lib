@@ -13,6 +13,8 @@ import { DynamicNgFormCreationFromJSONModule } from './modules/dynamic-ng-form-c
 import { ImageSliderModule } from './modules/image-slider/image-slider.module';
 import { IndeterminateTreeStructureModule } from './modules/indeterminate-tree-structure/indeterminate-tree-structure.module';
 import { ContextMenuModuleInfo } from './modules/context-menu/context-menu.module';
+import { DemoMaterialModule } from './demo.material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { ContextMenuModuleInfo } from './modules/context-menu/context-menu.modul
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MultiSelectValueExclusionModule,
     AccordionGroupModule,
     ModalWindowModule,
@@ -30,7 +33,8 @@ import { ContextMenuModuleInfo } from './modules/context-menu/context-menu.modul
     DynamicNgFormCreationFromJSONModule,
     ImageSliderModule,
     IndeterminateTreeStructureModule,
-    ContextMenuModuleInfo
+    ContextMenuModuleInfo,
+    DemoMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

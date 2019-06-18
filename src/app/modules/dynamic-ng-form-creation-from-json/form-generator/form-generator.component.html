@@ -1,68 +1,56 @@
-<div class="xOTB-card xOTB-col-sm-12 xOTB-col-md-5 xOTB-m-2 xOTB-mx-auto">
-  <h3 class="xOTB-jumbotron xOTB-text-center">{{formGeneratorName}}</h3>
-<div *ngFor='let data of jsonFormData' [ngSwitch]="data.tag">
-	<div *ngSwitchCase="'input'">
-		<div class="xOTB-form-group xOTB-form-inline">
-			<label class="xOTB-col-6" [ngStyle]='data.lableStyles'>{{data?.label}}</label>
-			<span 
-      *ngIf='(data.type == "text") 
-      || (data.type =="password") 
-      || (data.type == "number") 
-      || (data.type =="tel") 
-      || (data.type =="email") 
-      || (data.type =="date")'>
-        
-        <input class="xOTB-form-control" 
-              [type]="data.type" 
-              [placeholder]="data.placeholder" 
-              value={{data.value}} [ngStyle]='data.inputStyles'>
-      </span>
+<div fxLayout="row"  fxFlexAlign="center" fxFlex="100">
+<div fxLayout="column" style="margin:auto;">
+    
+  <!-- <h3 class="xOTB-jumbotron xOTB-text-center">{{ formGeneratorName }}</h3> -->
+   <div *ngFor="let data of jsonFormData" [ngSwitch]="data.tag">
+    <div *ngSwitchCase="'input'">
+      <mat-form-field *ngIf="chechType(data)"
+               appearance="outline">
+          <mat-label>{{data?.label}}</mat-label>
+        <input matInput
+          [placeholder]="data.placeholder"
+          value="{{ data.value }}"
+          [type]="data.type">
+      </mat-form-field> 
+      <mat-radio-group
+        *ngIf="data.type == 'radio'"
+        aria-labelledby="example-radio-group-label"
+                [(ngModel)]="selRadioValue"
+      >
+        <mat-radio-button
+                  *ngFor="let radioValues of data.values;let i = index;"
+          [value]="radioValues"
+          [ngClass]="{'radio-bt':(i !== 0)}" 
+        >
+          {{ radioValues }}
+        </mat-radio-button>
+      </mat-radio-group>
 
-			<span *ngIf='data.type == "radio"' 
-            class="xOTB-col-6">
-        
-        <span *ngFor="let radioValues of data.values">
-            
-            <input type="radio" 
-                   value="radioValues" 
-                   name='data.name' [ngStyle]='data.inputStyles'>
-          {{radioValues}}
-        </span>
-			</span>
+ <div *ngIf="data.type == 'checkbox'">
+   <div fxLayout="row" fxLayoutGap="10px">
+      <div *ngFor="let checkValue of data.values" >
+          <mat-checkbox>{{ checkValue }}</mat-checkbox>
+        </div>
+   </div>
+       
+      </div> 
 
-			<span *ngIf='data.type == "checkbox"'>
-        <span *ngFor="let radioValues of data.values">
-            <input type="checkbox"  
-                   value="radioValues" 
-                   name='data.name' [ngStyle]='data.inputStyles'>
-            {{radioValues}} 
-        </span>
-			<span>
-      </span>
-			</span>
-		</div>
-	</div>
-
-	<div *ngSwitchCase="'select'">
-		<div class="xOTB-form-group xOTB-form-inline">
-			<label class="xOTB-col-6" [ngStyle]='data.lableStyles'>{{data?.label}}</label>
-			<select class="xOTB-form-control xOTB-col-6" [ngStyle]='data.inputStyles'>
-      <option>{{data.label}}</option>
-          <option value="selectValues" 
-                  *ngFor="let selectValues of data.values">
-               {{selectValues}}
-          </option>
-    </select>
-		</div>
-	</div>
-
-	<div *ngSwitchCase="'button'">
-		<div class="xOTB-form-group xOTB-col-4 xOTB-mx-auto xOTB-d-flex xOTB-justify-content-between">
-			<button class="xOTB-btn xOTB-btn-primary" 
-              [type]='data.type ? data.type : "button"' [ngStyle]='data.buttonStyle'>
-        {{data.value}}
-      </button>
-		</div>
-	</div>
-</div>
+   
+    </div> 
+    <mat-form-field class="mat-field-sort" *ngSwitchCase="'select'">
+        <mat-label>{{ data?.label }}</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option>{{ data?.label }}</mat-option>
+          <ng-container *ngFor="let selectValues of data.values">
+            <mat-option value="selectValues"> {{ selectValues }}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+      <div *ngSwitchCase="'button'">
+          <div fxLayout="row">
+        <button mat-button>{{ data.value }}</button>
+        </div>
+      </div>
+   </div> 
+</div> 
 </div>

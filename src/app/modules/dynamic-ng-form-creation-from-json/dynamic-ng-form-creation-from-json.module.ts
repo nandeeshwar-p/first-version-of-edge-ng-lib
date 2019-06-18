@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormGeneratorComponent } from './form-generator/form-generator.component';
 import { DynamicNgFormCrationFromJsonComponent } from './dynamic-ng-form-creation-from-json.component';
+import { DemoMaterialModule } from '../../demo.material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -13,8 +15,10 @@ import { DynamicNgFormCrationFromJsonComponent } from './dynamic-ng-form-creatio
    ],
   imports: [
     CommonModule,
-    BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    DemoMaterialModule,
+    FormsModule,
+    FlexLayoutModule
     ],
   exports:[
     DynamicNgFormCrationFromJsonComponent,

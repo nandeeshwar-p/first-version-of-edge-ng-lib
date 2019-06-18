@@ -88,13 +88,13 @@
       "font-weight": "bold"
     }
   },
-  {
-    "value": "cancel",
+    {
+    "type": "submit",
+    "value": "submit",
     "tag": "button"
   },
   {
-    "type": "submit",
-    "value": "submit",
+    "value": "cancel",
     "tag": "button"
   }
 ]
