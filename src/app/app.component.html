@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header-edge></app-header-edge>
-<div class="xOTB-main-div" [style.height.px]="height">
+<div class="xOTB-main-div">
   <div class="xOTB-nav-div">
    <div class="xOTB-button-div" (click)="onSelectTab('multiSelvalue')"
    [ngClass]="{'xOTB-button-div-selected':isMultiSelValue}">
@@ -64,7 +64,6 @@
     </div>
     <div class="xOTB-actions-btn-content-div">
       <div *ngIf="isDemo" class="xotb-demo">
-        <router-outlet>
           <app-multi-select-value *ngIf="isMultiSelValue" class="xOTB-margin"></app-multi-select-value>
           <app-accordion-group *ngIf="isAcordionGroup" class="xOTB-margin"></app-accordion-group>
           <app-model *ngIf="isModelDialog" class="xOTB-margin"></app-model>
@@ -75,7 +74,6 @@
           <app-image *ngIf="isImageSlider" class="xOTB-margin"></app-image>
           <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
           <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
-        </router-outlet>
       </div>
       <div *ngIf="isDocumentation">
 
