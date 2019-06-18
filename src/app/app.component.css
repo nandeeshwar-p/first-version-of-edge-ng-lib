@@ -1,36 +1,41 @@
-.xOTB-first-div{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.04);
-    padding:0px;
-    top:0px;
-    left:0px;
+.xOTB-main-div{
+  width: 100%;
+  border: 1px solid blue;
+  display: flex;
 }
-.xOTB-second-div{
-    width: 40px;
-    height:40px;
-    background-color: #b4a8a8;
-    border-radius: 30px;
-    cursor: pointer;
+.xOTB-nav-div{
+  width: 20%;
+  border-right: 1px solid blue;
+  text-align: center;
 }
-.xOTB-third-div{
-    width: 200px;
-    height: 100%;
-    background-color: rgb(228, 171, 171);
-    cursor: pointer;
+.xOTB-actions-div{
+  margin: 20px;
+  border: 1px solid blue;
+  width: 80%;
 }
-.xOTB-button-div{
-    height: 33px;
-    text-align: center;
-    border: solid grey;
-    padding-top: 10px;
+.xOTB-actions-nav-div{
+width: 100%;
+background-color: blue;
+display:flex;
 }
-.xOTB-button-div-selected
-{
-    background-color: lightblue;
-    color:white;
+.xOTB-actions-btn-div{
+  width: 21%;
+  margin: 2%;
+  background-color: lightgray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+  border:2px solid lightgray;
 }
 
-.xOTB-margin
-{
-    margin:90px;
+.xOTB-actions-btn-click-div{
+  border:2px solid red;
+  background-color: white;
+}
+.xOTB-actions-btn-content-div{
+  text-align: center;
+  color: darkgrey;
 }
