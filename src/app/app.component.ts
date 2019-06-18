@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'xotbEDGE';
   height: any = 0;
-  isDemo: boolean = false;
+  isDemo: boolean = true;
   isDocumentation: boolean = false;
   isOthers: boolean = false;
   isMore: boolean = false;
