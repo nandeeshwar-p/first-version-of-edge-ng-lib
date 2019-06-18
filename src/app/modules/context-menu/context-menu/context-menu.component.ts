@@ -5,7 +5,7 @@ import { MatMenuTrigger } from '@angular/material';
   selector: 'app-context-menu',
   templateUrl: './context-menu.component.html',
   styleUrls: ['./context-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class ContextMenuComponent implements OnInit {
 
