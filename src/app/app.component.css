@@ -65,6 +65,7 @@ display:flex;
   text-align: center;
   border: solid grey;
   padding-top: 10px;
+  cursor: pointer;
 }
 .xOTB-button-div-selected
 {
