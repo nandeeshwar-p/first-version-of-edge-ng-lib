@@ -39,3 +39,45 @@ display:flex;
   text-align: center;
   color: darkgrey;
 }
+
+.xOTB-first-div{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding:0px;
+  top:0px;
+  left:0px;
+}
+.xOTB-second-div{
+  width: 40px;
+  height:40px;
+  background-color: #b4a8a8;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.xOTB-third-div{
+  width: 200px;
+  height: 100%;
+  background-color: rgb(228, 171, 171);
+  cursor: pointer;
+}
+.xOTB-button-div{
+  height: 33px;
+  text-align: center;
+  border: solid grey;
+  padding-top: 10px;
+}
+.xOTB-button-div-selected
+{
+  background-color: lightblue;
+  color:white;
+}
+
+.xOTB-margin
+{
+  margin:90px;
+}
+
+.xotb-demo
+{
+  margin: 10px;
+}
