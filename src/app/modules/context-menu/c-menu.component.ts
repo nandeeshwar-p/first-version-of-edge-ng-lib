@@ -24,15 +24,20 @@ export class MenuComponent implements OnInit {
     },
     {
       name: 'option2'
+    },
+    {
+      name: 'option3'
+    },
+    {
+      name: 'option4'
     }
   ];
 
-  click(val) {
+  contextMenuclick(val) {
     console.log(val);
   }
 
-  constructor(
-    private datePipe: DatePipe) {
+  constructor(private datePipe: DatePipe) {
 
   }
   ngOnInit() {

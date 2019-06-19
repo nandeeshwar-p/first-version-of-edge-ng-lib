@@ -15,7 +15,6 @@
 
   <h3>Range : {{firstdate | date}} - {{lastdate | date}}</h3>
 </div>
-
 <div class="parent">Context Menu Area
-  <app-context-menu [data]=data (optionClick)="click($event)" (closed)="click($event)"></app-context-menu>
+  <app-context-menu [data]=data (optionClick)="contextMenuclick($event)" (closed)="contextMenuclick($event)"></app-context-menu>
 </div>
