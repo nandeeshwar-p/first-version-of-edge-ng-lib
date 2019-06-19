@@ -53,11 +53,11 @@
         [ngClass]="{'xOTB-actions-btn-click-div':isDocumentation}">
         Documentation
       </div>
-      <div class="xOTB-actions-btn-div" (click)="onActionButtonClick('others')"
-        [ngClass]="{'xOTB-actions-btn-click-div':isOthers}">
+      <div class="xOTB-actions-btn-div xotb-disabledDiv" (click)="onActionButtonClick('others')"
+        [ngClass]="{'xOTB-actions-btn-click-div':isOthers}" >
         Others
       </div>
-      <div class="xOTB-actions-btn-div" (click)="onActionButtonClick('more')"
+      <div class="xOTB-actions-btn-div xotb-disabledDiv" (click)="onActionButtonClick('more')"
         [ngClass]="{'xOTB-actions-btn-click-div':isMore}">
         More
       </div>
