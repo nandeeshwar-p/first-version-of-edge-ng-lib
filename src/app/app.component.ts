@@ -51,6 +51,10 @@ export class AppComponent {
     }
   }
 
+  onSpeedMeter(value){
+    console.log('speed meter value '+value);
+  }
+
   onDemoClick() {
     this.isDemo = true;
     this.isDocumentation = false;

@@ -70,7 +70,7 @@
           <app-pagination *ngIf="isPagination" class="xOTB-margin"></app-pagination>
           <app-speedo-meter *ngIf="isSpeedoMeter" class="xOTB-margin"
           [speedoMeterColor]="'red'" [wheelColor]="'red'"
-          [max]="300"></app-speedo-meter>
+          [max]="300" (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
           <app-dynamic-form *ngIf="isDynamicForm" class="xOTB-margin"></app-dynamic-form>
           <app-form *ngIf="isFormCreation" class="xOTB-margin"></app-form>
           <app-image *ngIf="isImageSlider" class="xOTB-margin"></app-image>
