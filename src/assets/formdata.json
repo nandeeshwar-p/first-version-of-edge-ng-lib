@@ -1,4 +1,5 @@
-[{
+[
+  {
     "label": "Username",
     "tag": "input",
     "type": "text",
@@ -52,14 +53,22 @@
     "type": "radio",
     "name": "gender",
     "placeholder": "enter name",
-    "values": ["male", "female"],
+    "values": [
+      "male",
+      "female"
+    ],
     "labelStyles": {
       "font-weight": "bold"
     }
   },
   {
     "tag": "select",
-    "values": ["1", "2", "3", "4"],
+    "values": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
     "label": "user choice",
     "labelStyles": {
       "font-weight": "bold"
@@ -74,7 +83,11 @@
     "tag": "input",
     "type": "checkbox",
     "label": "select cources",
-    "values": ["java", "c", ".net"],
+    "values": [
+      "java",
+      "c",
+      ".net"
+    ],
     "labelStyles": {
       "font-weight": "bold"
     }
@@ -88,13 +101,19 @@
       "font-weight": "bold"
     }
   },
-    {
-    "type": "submit",
-    "value": "submit",
-    "tag": "button"
-  },
   {
-    "value": "cancel",
-    "tag": "button"
+    "tag": "button",
+    "buttons": [
+      {
+        "name": "submit",
+        "value": "submit",
+        "action": "submit"
+      },
+      {
+        "name": "cancel",
+        "value": "cancel",
+        "action": "cancel"
+      }
+    ]
   }
 ]

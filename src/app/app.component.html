@@ -68,7 +68,9 @@
           <app-accordion-group *ngIf="isAcordionGroup" class="xOTB-margin"></app-accordion-group>
           <app-model *ngIf="isModelDialog" class="xOTB-margin"></app-model>
           <app-pagination *ngIf="isPagination" class="xOTB-margin"></app-pagination>
-          <app-speedo-meter *ngIf="isSpeedoMeter" class="xOTB-margin"></app-speedo-meter>
+          <app-speedo-meter *ngIf="isSpeedoMeter" class="xOTB-margin"
+          [speedoMeterColor]="'red'" [wheelColor]="'red'"
+          [max]="300"></app-speedo-meter>
           <app-dynamic-form *ngIf="isDynamicForm" class="xOTB-margin"></app-dynamic-form>
           <app-form *ngIf="isFormCreation" class="xOTB-margin"></app-form>
           <app-image *ngIf="isImageSlider" class="xOTB-margin"></app-image>

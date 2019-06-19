@@ -9,6 +9,7 @@ export class FormGeneratorComponent implements OnInit {
   @Input() jsonFormData;
   @Input() formGeneratorName;
   public selRadioValue: string;
+  public selected:string;
   constructor() {}
 
   ngOnInit() {}
