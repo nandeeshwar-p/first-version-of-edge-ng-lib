@@ -1,26 +1,15 @@
 <div class="xOTB-container">
-
     <span *ngIf="node.children.length" (click)="toggleChildren(node)" class="xOTB-star">
       <img src="../../assets/green.png" *ngIf="!node.visible" width="20px;" height="20px" class="xOTB-green">
       <img src="../../assets/red.png" *ngIf="node.visible" width="20px;" height="20px" class="xOTB-red"> 
-    </span>
-  
-  
+    </span>  
   <input type="checkbox" [value]="node.checked" class="xOTB-check" #checkbox  [(ngModel)]="node.checked" (click)="selectEvents.emit(node)" (click)="checkParent(node,$event)" >
-  
-  <label class="xOTB-label" >{{ node.label }}</label>
- 
+  <label class="xOTB-label" >{{ node.label }}</label> 
   <ng-container *ngIf="node.visible">
     <div *ngIf="node.children.length" class="xOTB-children">
-      <ng-template ngFor let-child [ngForOf]="node.children">
-  
-        <app-tree-node 	(selectEvents)="selectEvents.emit($event)" 	[selectedNode]="selectedNode"
-           
-            [node]="child" >
-  
-         </app-tree-node>
+      <ng-template ngFor let-child [ngForOf]="node.children">  
+        <app-tree-node 	(selectEvents)="selectEvents.emit($event)" 	[selectedNode]="selectedNode" [node]="child"> </app-tree-node>
       </ng-template>
     </div>
   </ng-container>
-
 </div>
