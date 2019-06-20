@@ -72,7 +72,9 @@
           [speedoMeterColor]="'red'" [wheelColor]="'red'"
           [max]="300" (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
           <app-dynamic-form *ngIf="isDynamicForm" class="xOTB-margin"></app-dynamic-form>
-          <app-form *ngIf="isFormCreation" class="xOTB-margin"></app-form>
+          <app-form-generator [jsonFormData]='formJson' *ngIf="isFormCreation"
+          (btnEvent)="onDynamicFormButtonInfor($event)"></app-form-generator>
+          <!-- <app-form  *ngIf="isFormCreation" class="xOTB-margin"></app-form> -->
           <app-image *ngIf="isImageSlider" class="xOTB-margin"></app-image>
           <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
           <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>

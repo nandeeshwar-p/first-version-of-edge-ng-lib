@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent {
   isMore: boolean = false;
   position:string='relative';
   isExpand:boolean = false;
+  formJson:object;
 
   isHome:boolean = true;
   isMultiSelValue:boolean=false;
@@ -28,7 +30,10 @@ export class AppComponent {
   isContextMenu:boolean=false;
   isExample4:boolean=false;
 
+  constructor(private _http: HttpClient){}
+
   ngOnInit() {
+    this.getFormInfo();
     this.height = window.innerHeight - 87;
     // this.height = window.outerHeight;
     // this.position = 'fixed';
@@ -277,4 +282,22 @@ onContextMenu(){
   this.isContextMenu=true;
   this.isExample4=false;
 }
+
+getFormInfo() {
+
+  this._http.get('/assets/formdata.json').subscribe((res: any) => {
+
+    this.formJson = res;
+
+  }, error => {
+
+    console.log(error);
+
+  });
+
+}
+onDynamicFormButtonInfor(obj){
+  console.log(obj);
+}
+
 }

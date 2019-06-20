@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from "@angular/core";
+import { MatCheckbox } from '@angular/material';
 
 @Component({
   selector: "app-form-generator",
@@ -8,11 +9,15 @@ import { Component, OnInit, Input } from "@angular/core";
 export class FormGeneratorComponent implements OnInit {
   @Input() jsonFormData;
   @Input() formGeneratorName;
-  public selRadioValue: string;
-  public selected:string;
-  constructor() {}
 
-  ngOnInit() {}
+  @Output() btnEvent = new EventEmitter<object>();
+
+  public selected: string;
+  @ViewChild('ngForm') ngForm: any;
+  constructor() { }
+
+  ngOnInit() { }
+
 
   chechType(data) {
     return (
@@ -23,5 +28,14 @@ export class FormGeneratorComponent implements OnInit {
       data.type == "email" ||
       data.type == "date"
     );
+  }
+
+  onButtonClick(btnObj) {
+    let obj = {
+      name: btnObj.name,
+      value: btnObj.value,
+      updatedJsonFormData: this.jsonFormData
+    };
+    this.btnEvent.emit(obj);
   }
 }
