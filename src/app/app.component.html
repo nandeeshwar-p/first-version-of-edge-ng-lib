@@ -128,18 +128,15 @@
       </div>
       <div *ngIf="isDocumentation">
         <!--pagination-->
-<div class="" *ngIf="isPagination" class="xOTB-margin">
+<div class="" *ngIf="isPagination">
     <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
 	<div class="headcls">Description</div>
         <div class="blackbody">Pagination is a component that displays page numbers. It will not manipulate your data collection. You will have to split your data 
 collection into pages yourself. </div>
        
        <div class="headcls">Example Code</div>
-       <div class="blackbody"> &#60;div class=""&#62;
-&#60;div *ngFor="let item of pagingItems"&#62;&#123;item.body&#125;&#60;/div&#62;
-&#60;/div&#62;
-&#60;app-pagination-comp [items]="results" [pageSize]="10" [maxPages]="5"   (changePage)="onChangePage($event)"&#62;&#60;/app-pagination-comp&#62;
-      </div> 
+       <div class="blackbody">  &#60;app-pagination-comp [items]="results" [pageSize]="10" [maxPages]="8"   (changePage)="onChangePage($event)"&#62;&#60;/app-pagination-comp&#62; 
+       </div> 
           <div class="headcls">Variable Description</div>
         <table class="table-bordered">
           <thead>
@@ -152,60 +149,48 @@ collection into pages yourself. </div>
           </thead>
           <tbody>
           <tr>
-              <td>initialPage </td>
-              <td>Number</td>
-              <td>1</td>
-              <td>Frist page in the list</td>
+              <td> [items] </td>
+              <td>object</td>
+              <td></td>
+              <td>Total avaliable records which needs to be paginated</td>
             </tr>
             <tr>
-                <td>pageSize  </td>
+                <td>[pageSize]  </td>
                 <td>Number</td>
                 <td>10</td>
-                <td>Default page size in the list</td>
+                <td>Records avaliable per page </td>
               </tr>
               <tr>
-                  <td>totalItems  </td>
+                  <td>[maxPages]  </td>
                   <td>Number</td>
                   <td>&nbsp;</td>
-                  <td>Total records are aavaliable on the page</td>
+                  <td>Number of pages to be display for pagination</td>
                 </tr>
-                <tr>
-                    <td>maxPages  </td>
-                    <td>Number</td>
-                    <td>5</td>
-                    <td>Maximum page at once</td>
-                  </tr>
             </tbody>
         </table>
           <div class="headcls">Methods Description</div>
         <table class="table-bordered">
           <thead>
           <tr>
-            <th>Name</th>
+            <th>Method Name</th>
             <th>Type</th>
-            <th>Default</th>
+            <th>parameters</th>
             <th>Description</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-              <td>onChangePage() </td>
+            <tr>
+              <td>(changePage) </td>
               <td>function</td>
-              <td></td>
-              <td>Trigger when value changes</td>
+              <td>event</td>
+              <td>Callback function Trigger whenever page changes </td>
             </tr>
             <tr>
                 <td>ngOnInit()  </td>
                 <td>function</td>
                 <td></td>
-                <td>initlize the variable once page loads</td>
-              </tr>
-              <tr>
-                  <td>setPage() </td>
-                  <td>function</td>
-                  <td></td>
-                  <td>Trigger when value changes while move next and previous pages and set the page value</td>
-                </tr>
+                <td>initlize the variable and Methods once page loads</td>
+            </tr>
             </tbody>
         </table>
 </code></pre>
