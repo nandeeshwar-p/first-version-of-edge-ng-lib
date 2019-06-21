@@ -75,7 +75,11 @@
           <app-form-generator [jsonFormData]='formJson' *ngIf="isFormCreation"
           (btnEvent)="onDynamicFormButtonInfor($event)"></app-form-generator>
           <!-- <app-form  *ngIf="isFormCreation" class="xOTB-margin"></app-form> -->
-          <app-image *ngIf="isImageSlider" class="xOTB-margin"></app-image>
+          <app-image-slider [imagesData]='imagesData' *ngIf="isImageSlider"
+          (currentImage)="onImageSelected($event);"
+         [arrowColor]="'black'" [arrowBgColor]="'green'" [texColor]="'blue'" ></app-image-slider>
+
+          <!-- <app-image *ngIf="isImageSlider" class="xOTB-margin"></app-image> -->
           <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
           <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
       </div>
