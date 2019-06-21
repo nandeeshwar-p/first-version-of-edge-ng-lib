@@ -104,8 +104,6 @@
 
           <app-form-generator [jsonFormData]='customFormJson' (btnEvent)="onDynamicFormButtonInfor($event)">
           </app-form-generator>
-
-
         </ng-container>
 
 
@@ -128,87 +126,17 @@
       </div>
       <div *ngIf="isDocumentation">
         <!--pagination-->
-<div class="" *ngIf="isPagination">
-    <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
-	<div class="headcls">Description</div>
-        <div class="blackbody">Pagination is a component that displays page numbers. It will not manipulate your data collection. You will have to split your data 
-collection into pages yourself. </div>
-       
-       <div class="headcls">Example Code</div>
-       <div class="blackbody">  &#60;app-pagination-comp [items]="results" [pageSize]="10" [maxPages]="8"   (changePage)="onChangePage($event)"&#62;&#60;/app-pagination-comp&#62; 
-       </div> 
-          <div class="headcls">Variable Description</div>
-        <table class="table-bordered">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Default</th>
-            <th>Description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-              <td> [items] </td>
-              <td>object</td>
-              <td></td>
-              <td>Total avaliable records which needs to be paginated</td>
-            </tr>
-            <tr>
-                <td>[pageSize]  </td>
-                <td>Number</td>
-                <td>10</td>
-                <td>Records avaliable per page </td>
-              </tr>
-              <tr>
-                  <td>[maxPages]  </td>
-                  <td>Number</td>
-                  <td>&nbsp;</td>
-                  <td>Number of pages to be display for pagination</td>
-                </tr>
-            </tbody>
-        </table>
-          <div class="headcls">Methods Description</div>
-        <table class="table-bordered">
-          <thead>
-          <tr>
-            <th>Method Name</th>
-            <th>Type</th>
-            <th>parameters</th>
-            <th>Description</th>
-          </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>(changePage) </td>
-              <td>function</td>
-              <td>event</td>
-              <td>Callback function Trigger whenever page changes </td>
-            </tr>
-            <tr>
-                <td>ngOnInit()  </td>
-                <td>function</td>
-                <td></td>
-                <td>initlize the variable and Methods once page loads</td>
-            </tr>
-            </tbody>
-        </table>
-</code></pre>
-</div>
-<!--Pagination end here-->
+        <app-pagination-doc *ngIf="isPagination" class="xOTB-margin"></app-pagination-doc>
+        <!--Pagination end here-->
 <!--Context Menu-->
 <div class="" *ngIf="isContextMenu">
     <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
         <div class="headcls">Description</div>
-        <div class="blackbody">Change the value from the context menu and based on the selected option get the date range. </div>
+        <div class="blackbody">A context menu (also called pop up or pop-up menu) is a menu in a graphical user interface (GUI) that appears upon user interaction, such
+as a right-click mouse operation. 
+         </div>
        <div class="headcls">Example Code</div>
-       <div class="blackbody">&#60;app-quick-date-picker [datePresets]="quickDateFilter" [dateFormat]="dateFormat" [fromDateTime]="fromDate"
-    [toDateTime]="toDate" [maxDate]="maxDate" [type]="'dateRange'" [value]="'this_week'" [minDate]="minDate"
-    (DateChanged)="getDateForFilter($event)"&#62;
-  &#60;/app-quick-date-picker&#62;
-
-  &#60;h3&#62;Range : &#123;firstdate | date&#125; - &#123;lastdate | date&#125;&#60;/h3&#62;
-	   
+       <div class="blackbody"> &#60;app-context-menu [data]=data (optionClick)="click($event)" (closed)="click($event)"&#62;&#60;/app-context-menu&#62;
         </div> 
           <div class="headcls">Variable Description</div>
         <table class="table-bordered">
@@ -222,51 +150,60 @@ collection into pages yourself. </div>
           </thead>
           <tbody>
           <tr>
-              <td>fromDate </td>
-              <td>string</td>
+              <td>[data] </td>
+              <td>object</td>
               <td></td>
-              <td>From Date</td>
-            </tr>
-            <tr>
-               <td>toDate </td>
-              <td>string</td>
-              <td></td>
-              <td>To Date</td>
-            </tr>
-			<tr>
-               <td>minDate </td>
-              <td>string</td>
-              <td></td>
-              <td>Minimum date range</td>
-            </tr>
-			<tr>
-               <td>maxDate </td>
-              <td>string</td>
-              <td></td>
-              <td>Maximum date range</td>
-            </tr>
-			<tr>
-               <td>  dateFormat </td>
-              <td>string</td>
-              <td></td>
-              <td>Maximum date range</td>
-            </tr>
-			<tr>
-               <td>  firstdate </td>
-              <td>string</td>
-              <td></td>
-              <td>Defalt first date range</td>
-            </tr>
-			<tr>
-               <td>  lastdate </td>
-              <td>string</td>
-              <td></td>
-              <td>Defalt last date range</td>
-            </tr>
-              
+              <td>array of object for context menu option </td>
+          </tr>              
             </tbody>
         </table>
           <div class="headcls">Methods Description</div>
+        <table class="table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>parameters</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>  (optionClick)</td>
+              <td>function</td>
+              <td>event</td>
+              <td>Callback function</td>
+          </tr>
+          <tr>
+              <td>(closed)</td>
+              <td>function</td>
+              <td>event</td>
+              <td>function call Trigger when menu closed</td>
+          </tr>
+            <tr>
+                <td>ngOnInit()  </td>
+                <td>function</td>
+                <td>Void</td>
+                <td>initlize the variable once page loads</td>
+              </tr>
+             
+            </tbody>
+        </table>
+</code></pre>
+</div>
+<!--Context Menu End-->
+<!--Indetermine Tree-->
+<div class="" *ngIf="isIndetermineTree">
+    <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
+        <div class="headcls">Description</div>
+        <div class="blackbody">Indetermine Tree Highlights In this mode when the user clicks an item its children or sub items also become. 
+         </div>
+       <div class="headcls">Example Code</div>
+       
+       <div class="blackbody">&#60;app-tree-node [node]="tree" image1="green.png" image2="../../assets/red.png" getColorCode="red" (selectEvents)="handleSelection( $event )"
+    [selectedNode]="selectedTreeNode"&#62; &#60;/app-tree-node&#62;
+       </div> 
+          <div class="headcls">Variable Description</div>
         <table class="table-bordered">
           <thead>
           <tr>
@@ -278,15 +215,61 @@ collection into pages yourself. </div>
           </thead>
           <tbody>
           <tr>
-              <td>  getFormattedDate(date)</td>
+              <td>[node] </td>
+              <td>object</td>
+              <td></td>
+              <td>Array of object for making a tree option </td>
+          </tr> 
+          <tr>
+              <td>image1 </td>
+              <td>string
+              </td>
+              <td></td>
+              <td>Pass the primary image url for the tree </td>
+          </tr> 
+          <tr>
+              <td>image2 </td>
+              <td>string
+              </td>
+              <td></td>
+              <td>Pass the secondatory image url for the tree </td>
+          </tr> 
+          <tr>
+              <td>getColorCode </td>
+              <td>string
+              </td>
+              <td></td>
+              <td>Pass the color for the tree strcture</td>
+          </tr>                       
+            </tbody>
+        </table>
+          <div class="headcls">Methods Description</div>
+        <table class="table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>parameters</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>(selectEvents)</td>
               <td>function</td>
-              <td>Date</td>
-              <td>For formatting the date</td>
-            </tr>
+              <td>event</td>
+              <td>Callback function</td>
+          </tr>
+          <tr>
+              <td>[selectedNode]</td>
+              <td>function</td>
+              <td>event</td>
+              <td>function call Trigger when node selected</td>
+          </tr>
             <tr>
                 <td>ngOnInit()  </td>
                 <td>function</td>
-                <td></td>
+                <td>Void</td>
                 <td>initlize the variable once page loads</td>
               </tr>
              
@@ -294,7 +277,7 @@ collection into pages yourself. </div>
         </table>
 </code></pre>
 </div>
-<!--Context Menu End-->
+<!--Indetermine Tree End-->
       </div>
       <div>
 
