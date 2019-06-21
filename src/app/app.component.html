@@ -76,7 +76,189 @@
           <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
       </div>
       <div *ngIf="isDocumentation">
+        <!--pagination-->
+<div class="" *ngIf="isPagination" class="xOTB-margin">
+    <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
+	<div class="headcls">Description</div>
+        <div class="blackbody">Pagination is a component that displays page numbers. It will not manipulate your data collection. You will have to split your data 
+collection into pages yourself. </div>
+       
+       <div class="headcls">Example Code</div>
+       <div class="blackbody"> &#60;div class=""&#62;
+&#60;div *ngFor="let item of pagingItems"&#62;&#123;item.body&#125;&#60;/div&#62;
+&#60;/div&#62;
+&#60;app-pagination-comp [items]="results" [pageSize]="10" [maxPages]="5"   (changePage)="onChangePage($event)"&#62;&#60;/app-pagination-comp&#62;
+      </div> 
+          <div class="headcls">Variable Description</div>
+        <table class="table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>initialPage </td>
+              <td>Number</td>
+              <td>1</td>
+              <td>Frist page in the list</td>
+            </tr>
+            <tr>
+                <td>pageSize  </td>
+                <td>Number</td>
+                <td>10</td>
+                <td>Default page size in the list</td>
+              </tr>
+              <tr>
+                  <td>totalItems  </td>
+                  <td>Number</td>
+                  <td>&nbsp;</td>
+                  <td>Total records are aavaliable on the page</td>
+                </tr>
+                <tr>
+                    <td>maxPages  </td>
+                    <td>Number</td>
+                    <td>5</td>
+                    <td>Maximum page at once</td>
+                  </tr>
+            </tbody>
+        </table>
+          <div class="headcls">Methods Description</div>
+        <table class="table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>onChangePage() </td>
+              <td>function</td>
+              <td></td>
+              <td>Trigger when value changes</td>
+            </tr>
+            <tr>
+                <td>ngOnInit()  </td>
+                <td>function</td>
+                <td></td>
+                <td>initlize the variable once page loads</td>
+              </tr>
+              <tr>
+                  <td>setPage() </td>
+                  <td>function</td>
+                  <td></td>
+                  <td>Trigger when value changes while move next and previous pages and set the page value</td>
+                </tr>
+            </tbody>
+        </table>
+</code></pre>
+</div>
+<!--Pagination end here-->
+<!--Context Menu-->
+<div class="" *ngIf="isContextMenu">
+    <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
+        <div class="headcls">Description</div>
+        <div class="blackbody">Change the value from the context menu and based on the selected option get the date range. </div>
+       <div class="headcls">Example Code</div>
+       <div class="blackbody">&#60;app-quick-date-picker [datePresets]="quickDateFilter" [dateFormat]="dateFormat" [fromDateTime]="fromDate"
+    [toDateTime]="toDate" [maxDate]="maxDate" [type]="'dateRange'" [value]="'this_week'" [minDate]="minDate"
+    (DateChanged)="getDateForFilter($event)"&#62;
+  &#60;/app-quick-date-picker&#62;
 
+  &#60;h3&#62;Range : &#123;firstdate | date&#125; - &#123;lastdate | date&#125;&#60;/h3&#62;
+	   
+        </div> 
+          <div class="headcls">Variable Description</div>
+        <table class="table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>fromDate </td>
+              <td>string</td>
+              <td></td>
+              <td>From Date</td>
+            </tr>
+            <tr>
+               <td>toDate </td>
+              <td>string</td>
+              <td></td>
+              <td>To Date</td>
+            </tr>
+			<tr>
+               <td>minDate </td>
+              <td>string</td>
+              <td></td>
+              <td>Minimum date range</td>
+            </tr>
+			<tr>
+               <td>maxDate </td>
+              <td>string</td>
+              <td></td>
+              <td>Maximum date range</td>
+            </tr>
+			<tr>
+               <td>  dateFormat </td>
+              <td>string</td>
+              <td></td>
+              <td>Maximum date range</td>
+            </tr>
+			<tr>
+               <td>  firstdate </td>
+              <td>string</td>
+              <td></td>
+              <td>Defalt first date range</td>
+            </tr>
+			<tr>
+               <td>  lastdate </td>
+              <td>string</td>
+              <td></td>
+              <td>Defalt last date range</td>
+            </tr>
+              
+            </tbody>
+        </table>
+          <div class="headcls">Methods Description</div>
+        <table class="table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>  getFormattedDate(date)</td>
+              <td>function</td>
+              <td>Date</td>
+              <td>For formatting the date</td>
+            </tr>
+            <tr>
+                <td>ngOnInit()  </td>
+                <td>function</td>
+                <td></td>
+                <td>initlize the variable once page loads</td>
+              </tr>
+             
+            </tbody>
+        </table>
+</code></pre>
+</div>
+<!--Context Menu End-->
       </div>
       <div>
 
