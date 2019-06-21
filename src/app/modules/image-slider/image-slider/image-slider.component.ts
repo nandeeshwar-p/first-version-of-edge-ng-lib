@@ -14,9 +14,10 @@ import { Component, OnInit, ElementRef, Renderer, Input, AfterViewInit, AfterVie
 export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
   @Input() imagesData;
-  @Input() arrowColor:string="#912525";
-  @Input() arrowBgColor:string="white";
-  @Input() texColor:string="#f2f2f2";
+  @Input() arrowColor: string = "#912525";
+  @Input() arrowBgColor: string = "white";
+  @Input() texColor: string = "#f2f2f2";
+  private isFirstTime: boolean = true;
 
 
 
@@ -34,8 +35,11 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
 
   ngAfterViewChecked() {
+    if (this.isFirstTime) {
+      this.showSlides(1);
+      this.isFirstTime = false;
+    }
 
-    this.showSlides(1);
 
   }
 
@@ -92,7 +96,7 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
   }
 
-  sendData(obj){
+  sendData(obj) {
     // this.currentImage.emit(obj);
   }
 
