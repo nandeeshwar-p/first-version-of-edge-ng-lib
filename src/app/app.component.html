@@ -127,19 +127,32 @@
         <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
       </div>
       <div *ngIf="isDocumentation">
+
+        <app-speedometer-doc *ngIf="isSpeedoMeter" class="xOTB-doc-margin"></app-speedometer-doc>
+
+        <app-angular-dynamic-doc *ngIf="isDynamicForm"></app-angular-dynamic-doc>
+
+        <app-dynamic-form-doc *ngIf="isFormCreation"></app-dynamic-form-doc>
+
+        <app-image-slider-doc *ngIf="isImageSlider"></app-image-slider-doc>
+
+
+
+
+
         <!--pagination-->
 <div class="" *ngIf="isPagination" class="xOTB-margin">
     <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
 	<div class="headcls">Description</div>
-        <div class="blackbody">Pagination is a component that displays page numbers. It will not manipulate your data collection. You will have to split your data 
+        <div class="blackbody">Pagination is a component that displays page numbers. It will not manipulate your data collection. You will have to split your data
 collection into pages yourself. </div>
-       
+
        <div class="headcls">Example Code</div>
        <div class="blackbody"> &#60;div class=""&#62;
 &#60;div *ngFor="let item of pagingItems"&#62;&#123;item.body&#125;&#60;/div&#62;
 &#60;/div&#62;
 &#60;app-pagination-comp [items]="results" [pageSize]="10" [maxPages]="5"   (changePage)="onChangePage($event)"&#62;&#60;/app-pagination-comp&#62;
-      </div> 
+      </div>
           <div class="headcls">Variable Description</div>
         <table class="table-bordered">
           <thead>
@@ -223,8 +236,8 @@ collection into pages yourself. </div>
   &#60;/app-quick-date-picker&#62;
 
   &#60;h3&#62;Range : &#123;firstdate | date&#125; - &#123;lastdate | date&#125;&#60;/h3&#62;
-	   
-        </div> 
+
+        </div>
           <div class="headcls">Variable Description</div>
         <table class="table-bordered">
           <thead>
@@ -278,7 +291,7 @@ collection into pages yourself. </div>
               <td></td>
               <td>Defalt last date range</td>
             </tr>
-              
+
             </tbody>
         </table>
           <div class="headcls">Methods Description</div>
@@ -304,7 +317,7 @@ collection into pages yourself. </div>
                 <td></td>
                 <td>initlize the variable once page loads</td>
               </tr>
-             
+
             </tbody>
         </table>
 </code></pre>
