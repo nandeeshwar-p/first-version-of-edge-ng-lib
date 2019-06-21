@@ -104,6 +104,8 @@
 
           <app-form-generator [jsonFormData]='customFormJson' (btnEvent)="onDynamicFormButtonInfor($event)">
           </app-form-generator>
+
+
         </ng-container>
 
 
@@ -125,23 +127,23 @@
         <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
       </div>
       <div *ngIf="isDocumentation">
-        <!--pagination-->
-        <app-pagination-doc *ngIf="isPagination" class="xOTB-margin"></app-pagination-doc>
-        <!--Pagination end here-->
-        <!--Context Menu-->
-        <app-context-menu-doc *ngIf="isContextMenu"></app-context-menu-doc>
-        <!--Context Menu End-->
-        <!--Indetermine Tree-->
-        <app-indetermine-tree-doc *ngIf="isIndetermineTree"></app-indetermine-tree-doc>
-        <!--Indetermine Tree End-->
-      </div>
-      <div>
 
-      </div>
-      <!-- <h1>Demo Here</h1>
-      <h1>Documentation Here</h1> -->
-      <!-- <h1 *ngIf="isMore">More Here</h1>
-      <h1 *ngIf="isOthers">Others Here</h1> -->
+        <app-speedometer-doc *ngIf="isSpeedoMeter" class="xOTB-doc-margin"></app-speedometer-doc>
+
+        <app-angular-dynamic-doc *ngIf="isDynamicForm"></app-angular-dynamic-doc>
+
+        <app-dynamic-form-doc *ngIf="isFormCreation"></app-dynamic-form-doc>
+
+        <app-image-slider-doc *ngIf="isImageSlider"></app-image-slider-doc>
+         <!--pagination-->
+         <app-pagination-doc *ngIf="isPagination" class="xOTB-doc-margin"></app-pagination-doc>
+         <!--Pagination end here-->
+         <!--Context Menu-->
+         <app-context-menu-doc *ngIf="isContextMenu"></app-context-menu-doc>
+         <!--Context Menu End-->
+         <!--Indetermine Tree-->
+         <app-indetermine-tree-doc *ngIf="isIndetermineTree"></app-indetermine-tree-doc>
+         <!--Indetermine Tree End-->
     </div>
   </div>
 </div>
