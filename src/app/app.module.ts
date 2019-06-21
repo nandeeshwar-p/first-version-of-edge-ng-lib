@@ -10,6 +10,7 @@ import { MultiSelectValueExclusionModule } from './modules/multi-select-value-ex
 import { AccordionGroupModule } from './modules/accordion-group/accordion-group.module';
 import { ModalWindowModule } from './modules/modal-window/modal-window.module';
 import { AngularPaginationModule } from './modules/angular-pagination/angular-pagination.module';
+import { AngularPaginationDocModule } from './modules/angular-pagination-documentation/angular-pagination-doc.module';
 import { SpeedometerModule } from './modules/speedometer/speedometer.module';
 import { AngularDynamicFormCreationModule } from './modules/angular-dynamic-form-creation/angular-dynamic-form-creation.module';
 import { DynamicNgFormCreationFromJSONModule } from './modules/dynamic-ng-form-creation-from-json/dynamic-ng-form-creation-from-json.module';
@@ -32,6 +33,7 @@ import { DemoMaterialModule } from './demo.material.module';
     AccordionGroupModule,
     ModalWindowModule,
     AngularPaginationModule,
+    AngularPaginationDocModule,
     SpeedometerModule,
     AngularDynamicFormCreationModule,
     DynamicNgFormCreationFromJSONModule,
