@@ -23,6 +23,9 @@ import {
 })
 
 export class TreeNodeComponent implements AfterContentChecked, OnInit {
+  @Input() getColorCode: string;
+  @Input() image1: string;
+  @Input() image2: string; 
   @Input() node: TreeNode;
   @Input() selectedNode: TreeNode | null;
   @Output() selectEvents = new EventEmitter();
