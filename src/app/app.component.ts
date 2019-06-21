@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,9 @@ export class AppComponent {
   isMore: boolean = false;
   position:string='relative';
   isExpand:boolean = false;
+  formJson:object;
+  customFormJson:object;
+  imagesData:object;
 
   isHome:boolean = true;
   isMultiSelValue:boolean=false;
@@ -28,7 +32,12 @@ export class AppComponent {
   isContextMenu:boolean=false;
   isExample4:boolean=false;
 
+  constructor(private _http: HttpClient){}
+
   ngOnInit() {
+    this.getFormInfo();
+    this.getImages();
+    this.getFormInfoCustom();
     this.height = window.innerHeight - 87;
     // this.height = window.outerHeight;
     // this.position = 'fixed';
@@ -49,6 +58,10 @@ export class AppComponent {
           this.onMoreClick();
         break;
     }
+  }
+
+  onSpeedMeter(value){
+    console.log('speed meter value '+value);
   }
 
   onDemoClick() {
@@ -273,4 +286,59 @@ onContextMenu(){
   this.isContextMenu=true;
   this.isExample4=false;
 }
+
+getFormInfo() {
+
+  this._http.get('/assets/formdata.json').subscribe((res: any) => {
+
+    this.formJson = res;
+
+  }, error => {
+
+    console.log(error);
+
+  });
+
+}
+
+getFormInfoCustom() {
+
+  this._http.get('/assets/fromdata1.json').subscribe((res: any) => {
+
+    this.customFormJson = res;
+
+  }, error => {
+
+    console.log(error);
+
+  });
+
+}
+
+
+onDynamicFormButtonInfor(obj){
+  console.log(obj);
+}
+
+onImageSelected(obj){
+  console.log(obj);
+}
+
+getImages() {
+  this._http.get('./assets/img.json').subscribe((res: any) => {
+
+   this.imagesData = res;
+
+  }, error => {
+
+    console.log(error);
+
+  });
+
+}
+
+onAppDynamicForm(obj){
+  console.log(obj);
+}
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer, Input, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, Input, AfterViewInit, AfterViewChecked, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -14,6 +14,14 @@ import { Component, OnInit, ElementRef, Renderer, Input, AfterViewInit, AfterVie
 export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
   @Input() imagesData;
+  @Input() arrowColor: string = "#912525";
+  @Input() arrowBgColor: string = "white";
+  @Input() texColor: string = "#f2f2f2";
+  private isFirstTime: boolean = true;
+
+
+
+  @Output() currentImage = new EventEmitter<object>();
 
   slideIndex = 1;
 
@@ -22,12 +30,16 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
 
   ngOnInit() {
+
   }
 
 
   ngAfterViewChecked() {
+    if (this.isFirstTime) {
+      this.showSlides(1);
+      this.isFirstTime = false;
+    }
 
-    this.showSlides(1);
 
   }
 
@@ -53,9 +65,7 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
     }
 
     for (i = 0; i < slides.length; i++) {
-
       this.renderer.setElementStyle(slides[i], 'display', 'none');
-
     }
 
     for (i = 0; i < dots.length; i++) {
@@ -66,6 +76,7 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
     if (slides.length !== 0) {
       this.renderer.setElementStyle(slides[this.slideIndex - 1], 'display', 'block');
+      this.currentImage.emit(this.imagesData[this.slideIndex - 1]);
     }
 
     if (dots.length !== 0) {
@@ -83,6 +94,10 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
     this.showSlides(this.slideIndex = n);
 
+  }
+
+  sendData(obj) {
+    // this.currentImage.emit(obj);
   }
 
 

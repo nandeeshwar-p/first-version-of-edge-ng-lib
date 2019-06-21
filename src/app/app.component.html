@@ -2,46 +2,46 @@
 <app-header-edge></app-header-edge>
 <div class="xOTB-main-div">
   <div class="xOTB-nav-div">
-   <div class="xOTB-button-div" (click)="onSelectTab('multiSelvalue')"
-   [ngClass]="{'xOTB-button-div-selected':isMultiSelValue}">
-     Multi Select Value
-   </div>
-   <div class="xOTB-button-div" (click)="onSelectTab('accordiongroup')"
-    [ngClass]="{'xOTB-button-div-selected':isAcordionGroup}">
-     Acordion Group
-   </div>
-   <div class="xOTB-button-div" (click)="onSelectTab('modeldialog')"
-    [ngClass]="{'xOTB-button-div-selected':isModelDialog}">
-     Model Dialog
-   </div>
-   <div class="xOTB-button-div"  (click)="onSelectTab('speedometer')"
-   [ngClass]="{'xOTB-button-div-selected':isSpeedoMeter}">
-       Speedo Meter
-   </div>
-   <div class="xOTB-button-div" (click)="onSelectTab('dynamicform')"
-    [ngClass]="{'xOTB-button-div-selected':isDynamicForm}">
-     Dynamic Form
-   </div>
-   <div class="xOTB-button-div"  (click)="onSelectTab('formcreation')"
-   [ngClass]="{'xOTB-button-div-selected':isFormCreation}">
-     Form Creation
-   </div>
-   <div class="xOTB-button-div"  (click)="onSelectTab('imageslider')"
-   [ngClass]="{'xOTB-button-div-selected':isImageSlider}">
-     Image Slider
-   </div>
-   <div class="xOTB-button-div" (click)="onSelectTab('indetermintree')"
-    [ngClass]="{'xOTB-button-div-selected':isIndetermineTree}">
-           Indetermine Tree
-   </div>
-   <div class="xOTB-button-div" (click)="onSelectTab('pagination')"
-   [ngClass]="{'xOTB-button-div-selected':isPagination}">
-          Pagination
-  </div>
-  <div class="xOTB-button-div" (click)="onSelectTab('contextmenu')"
-   [ngClass]="{'xOTB-button-div-selected':isContextMenu}">
-          Context Menu
-  </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('multiSelvalue')"
+      [ngClass]="{'xOTB-button-div-selected':isMultiSelValue}">
+      Multi Select Value
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('accordiongroup')"
+      [ngClass]="{'xOTB-button-div-selected':isAcordionGroup}">
+      Acordion Group
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('modeldialog')"
+      [ngClass]="{'xOTB-button-div-selected':isModelDialog}">
+      Model Dialog
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('speedometer')"
+      [ngClass]="{'xOTB-button-div-selected':isSpeedoMeter}">
+      Speedo Meter
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('dynamicform')"
+      [ngClass]="{'xOTB-button-div-selected':isDynamicForm}">
+      Dynamic Form
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('formcreation')"
+      [ngClass]="{'xOTB-button-div-selected':isFormCreation}">
+      Form Creation
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('imageslider')"
+      [ngClass]="{'xOTB-button-div-selected':isImageSlider}">
+      Image Slider
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('indetermintree')"
+      [ngClass]="{'xOTB-button-div-selected':isIndetermineTree}">
+      Indetermine Tree
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('pagination')"
+      [ngClass]="{'xOTB-button-div-selected':isPagination}">
+      Pagination
+    </div>
+    <div class="xOTB-button-div" (click)="onSelectTab('contextmenu')"
+      [ngClass]="{'xOTB-button-div-selected':isContextMenu}">
+      Context Menu
+    </div>
   </div>
   <div class="xOTB-actions-div">
     <div class="xOTB-actions-nav-div">
@@ -54,7 +54,7 @@
         Documentation
       </div>
       <div class="xOTB-actions-btn-div xotb-disabledDiv" (click)="onActionButtonClick('others')"
-        [ngClass]="{'xOTB-actions-btn-click-div':isOthers}" >
+        [ngClass]="{'xOTB-actions-btn-click-div':isOthers}">
         Others
       </div>
       <div class="xOTB-actions-btn-div xotb-disabledDiv" (click)="onActionButtonClick('more')"
@@ -64,16 +64,67 @@
     </div>
     <div class="xOTB-actions-btn-content-div">
       <div *ngIf="isDemo" class="xotb-demo">
-          <app-multi-select-value *ngIf="isMultiSelValue" class="xOTB-margin"></app-multi-select-value>
-          <app-accordion-group *ngIf="isAcordionGroup" class="xOTB-margin"></app-accordion-group>
-          <app-model *ngIf="isModelDialog" class="xOTB-margin"></app-model>
-          <app-pagination *ngIf="isPagination" class="xOTB-margin"></app-pagination>
-          <app-speedo-meter *ngIf="isSpeedoMeter" class="xOTB-margin"></app-speedo-meter>
-          <app-dynamic-form *ngIf="isDynamicForm" class="xOTB-margin"></app-dynamic-form>
-          <app-form *ngIf="isFormCreation" class="xOTB-margin"></app-form>
-          <app-image *ngIf="isImageSlider" class="xOTB-margin"></app-image>
-          <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
-          <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
+        <app-multi-select-value *ngIf="isMultiSelValue" class="xOTB-margin"></app-multi-select-value>
+        <app-accordion-group *ngIf="isAcordionGroup" class="xOTB-margin"></app-accordion-group>
+        <app-model *ngIf="isModelDialog" class="xOTB-margin"></app-model>
+        <app-pagination *ngIf="isPagination" class="xOTB-margin"></app-pagination>
+
+        <ng-container *ngIf="isSpeedoMeter">
+          <h2>Sample default demo</h2>
+
+          <app-speedo-meter class="xOTB-margin" (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
+
+          <h2>Sample custom demo</h2>
+
+          <app-speedo-meter class="xOTB-margin" [speedoMeterColor]="'red'" [wheelColor]="'green'" [max]="300"
+            (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
+
+        </ng-container>
+
+
+        <ng-container *ngIf="isDynamicForm">
+          <h2>Sample default demo</h2>
+
+          <app-dynamic-form (formValue)="onAppDynamicForm($event);" class="xOTB-margin"></app-dynamic-form>
+
+          <h2>Sample custom demo</h2>
+
+          <app-dynamic-form [btnColor]="'green'" (formValue)="onAppDynamicForm($event);" class="xOTB-margin">
+          </app-dynamic-form>
+
+        </ng-container>
+
+        <ng-container *ngIf="isFormCreation">
+          <h2>Sample default demo</h2>
+
+          <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)">
+          </app-form-generator>
+
+          <h2>Sample custom demo</h2>
+
+          <app-form-generator [jsonFormData]='customFormJson' (btnEvent)="onDynamicFormButtonInfor($event)">
+          </app-form-generator>
+
+
+        </ng-container>
+
+
+        <ng-container *ngIf="isImageSlider">
+          <h2>Sample default demo</h2>
+
+          <app-image-slider [imagesData]='imagesData' (currentImage)="onImageSelected($event);">
+          </app-image-slider>
+
+          <h2>Sample custom demo</h2>
+
+          <app-image-slider [imagesData]='imagesData' (currentImage)="onImageSelected($event);" [arrowColor]="'black'"
+            [arrowBgColor]="'green'" [texColor]="'blue'">
+          </app-image-slider>
+
+        </ng-container>
+
+        <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
+        <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
       </div>
       <div *ngIf="isDocumentation">
         <!--pagination-->

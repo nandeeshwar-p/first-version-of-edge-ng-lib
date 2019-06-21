@@ -1,50 +1,29 @@
-[{
+[
+  {
     "label": "Username",
     "tag": "input",
     "type": "text",
     "placeholder": "enter name",
-    "value": "Srinivas",
-    "inputStyles": {
-      "background-color": "#e3e4e8",
-      "font-size": "15px",
-      "color": "black"
-    },
-    "labelStyles": {
-      "font-weight": "bold"
-    }
+    "value": "Srinivas"
   },
   {
     "label": "Email Id",
     "tag": "input",
     "type": "email",
     "placeholder": "please enter email",
-    "value": "sri@gmail.com",
-    "inputStyles": {
-      "background-color": "#e3e4e8",
-      "font-size": "15px",
-      "color": "black"
-    },
-    "labelStyles": {
-      "font-weight": "bold"
-    }
+    "value": "sri@gmail.com"
   },
   {
     "label": "Password",
     "tag": "input",
     "type": "password",
-    "placeholder": "please enter your password",
-    "labelStyles": {
-      "font-weight": "bold"
-    }
+    "placeholder": "please enter your password"
   },
   {
     "label": "Mobile Number",
     "tag": "input",
     "type": "tel",
-    "placeholder": "enter mobile number",
-    "labelStyles": {
-      "font-weight": "bold"
-    }
+    "placeholder": "enter mobile number"
   },
   {
     "label": "Gender",
@@ -52,49 +31,44 @@
     "type": "radio",
     "name": "gender",
     "placeholder": "enter name",
-    "values": ["male", "female"],
-    "labelStyles": {
-      "font-weight": "bold"
-    }
+    "values": [
+      {"name":"male"},
+      {"name":"female"}
+    ],
+    "selectedValue":"male"
   },
   {
     "tag": "select",
-    "values": ["1", "2", "3", "4"],
+    "values": [
+      {"name":"1","value":"one"},
+      {"name":"2","value":"two"},
+      {"name":"3","value":"three"},
+      {"name":"4","value":"four"}
+    ],
     "label": "user choice",
-    "labelStyles": {
-      "font-weight": "bold"
-    },
-    "inputStyles": {
-      "background-color": "#9a9ead",
-      "font-size": "15px",
-      "color": "#fff"
-    }
+    "selectedValue":""
   },
   {
     "tag": "input",
     "type": "checkbox",
     "label": "select cources",
-    "values": ["java", "c", ".net"],
-    "labelStyles": {
-      "font-weight": "bold"
-    }
+    "values": [
+      {"name":"java","selected":false},
+      {"name":"c","selected":true},
+      {"name":".net","selected":false}
+    ]
   },
   {
-    "label": "Password",
-    "tag": "input",
-    "type": "password",
-    "placeholder": "enter name",
-    "labelStyles": {
-      "font-weight": "bold"
-    }
-  },
-    {
-    "type": "submit",
-    "value": "submit",
-    "tag": "button"
-  },
-  {
-    "value": "cancel",
-    "tag": "button"
+    "tag": "button",
+    "buttons": [
+      {
+        "name": "submit",
+        "value": "submit"
+      },
+      {
+        "name": "cancel",
+        "value": "cancel"
+      }
+    ]
   }
 ]
