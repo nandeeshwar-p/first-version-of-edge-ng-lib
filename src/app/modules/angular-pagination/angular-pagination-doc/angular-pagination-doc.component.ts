@@ -41,6 +41,7 @@ export class PaginationDocComponent implements OnInit {
 
     this.example = `
     Sample attribute example
+    
     <app-pagination-comp [items]="results" [pageSize]="10" [maxPages]="8"   (changePage)="onChangePage($event)"></app-pagination-comp>
     `;
   }
