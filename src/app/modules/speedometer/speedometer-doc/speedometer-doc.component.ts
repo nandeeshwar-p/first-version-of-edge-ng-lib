@@ -24,8 +24,8 @@ export class SpeedometerDocComponent implements OnInit {
     {methodName: "selectedValue", eventType: 'number', description: 'It will give you the selected SpeedometerValue'},
   ];
 
-  public input_dataSource = new MatTableDataSource<Element>(this.input_element_data);
-  public output_dataSource = new MatTableDataSource<Element>(this.output_element_data);
+  public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
+  public output_dataSource = new MatTableDataSource<IoutputElement>(this.output_element_data);
 
 
   constructor() {
