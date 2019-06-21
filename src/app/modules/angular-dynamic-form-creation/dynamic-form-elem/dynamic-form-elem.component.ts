@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
   styleUrls: ['../styles.css','./dynamic-form-elem.component.css']
 })
 export class DynamicFormElemComponent implements OnInit {
+  @Input() btnColor:string = "#00ceff";
+  @Output() formValue = new EventEmitter<object>();
+
   form: FormGroup;
   constructor(private fb: FormBuilder) {
 
@@ -40,13 +43,15 @@ export class DynamicFormElemComponent implements OnInit {
   }
 
   addLevel1Item() {
+    this.formValue.emit(this.form.value);
     const control = <FormArray>this.form.controls['level1'];
     control.push(this.initLevel1());
   }
 
   addLevel2Item(i) {
+    this.formValue.emit(this.form.value);
     const control = (<FormArray>this.form.controls['level1']).at(i).get('level2') as FormArray;
     control.push(this.initLevel2());
-  }  
+  }
 
 }

@@ -319,4 +319,8 @@ getImages() {
 
 }
 
+onAppDynamicForm(obj){
+  console.log(obj);
+}
+
 }

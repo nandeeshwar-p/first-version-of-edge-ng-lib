@@ -29,6 +29,7 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
 
   ngOnInit() {
+
   }
 
 
