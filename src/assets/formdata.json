@@ -59,13 +59,6 @@
     ]
   },
   {
-    "label": "Password",
-    "tag": "input",
-    "type": "password",
-    "placeholder": "enter name",
-    "value":""
-  },
-  {
     "tag": "button",
     "buttons": [
       {

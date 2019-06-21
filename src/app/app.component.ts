@@ -16,6 +16,7 @@ export class AppComponent {
   position:string='relative';
   isExpand:boolean = false;
   formJson:object;
+  customFormJson:object;
   imagesData:object;
 
   isHome:boolean = true;
@@ -36,6 +37,7 @@ export class AppComponent {
   ngOnInit() {
     this.getFormInfo();
     this.getImages();
+    this.getFormInfoCustom();
     this.height = window.innerHeight - 87;
     // this.height = window.outerHeight;
     // this.position = 'fixed';
@@ -298,6 +300,22 @@ getFormInfo() {
   });
 
 }
+
+getFormInfoCustom() {
+
+  this._http.get('/assets/fromdata1.json').subscribe((res: any) => {
+
+    this.customFormJson = res;
+
+  }, error => {
+
+    console.log(error);
+
+  });
+
+}
+
+
 onDynamicFormButtonInfor(obj){
   console.log(obj);
 }
