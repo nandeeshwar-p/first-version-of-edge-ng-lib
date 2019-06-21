@@ -10,13 +10,15 @@ import { MultiSelectValueExclusionModule } from './modules/multi-select-value-ex
 import { AccordionGroupModule } from './modules/accordion-group/accordion-group.module';
 import { ModalWindowModule } from './modules/modal-window/modal-window.module';
 import { AngularPaginationModule } from './modules/angular-pagination/angular-pagination.module';
-import { AngularPaginationDocModule } from './modules/angular-pagination-documentation/angular-pagination-doc.module';
+import { AngularPaginationDocModule } from './modules/angular-pagination-doc/angular-pagination-doc.module';
 import { SpeedometerModule } from './modules/speedometer/speedometer.module';
 import { AngularDynamicFormCreationModule } from './modules/angular-dynamic-form-creation/angular-dynamic-form-creation.module';
 import { DynamicNgFormCreationFromJSONModule } from './modules/dynamic-ng-form-creation-from-json/dynamic-ng-form-creation-from-json.module';
 import { ImageSliderModule } from './modules/image-slider/image-slider.module';
 import { IndeterminateTreeStructureModule } from './modules/indeterminate-tree-structure/indeterminate-tree-structure.module';
+import { IndeterminateTreeDocModule } from './modules/indeterminate-tree-doc/indeterminate-tree-doc.module';
 import { ContextMenuModuleInfo } from './modules/context-menu/context-menu.module';
+import { ContextMenuDocModuleInfo } from './modules/context-menu-doc/context-menu-doc.module';
 import { DemoMaterialModule } from './demo.material.module';
 
 @NgModule({
@@ -39,7 +41,9 @@ import { DemoMaterialModule } from './demo.material.module';
     DynamicNgFormCreationFromJSONModule,
     ImageSliderModule,
     IndeterminateTreeStructureModule,
+    IndeterminateTreeDocModule,
     ContextMenuModuleInfo,
+    ContextMenuDocModuleInfo,
     DemoMaterialModule
   ],
   providers: [],
