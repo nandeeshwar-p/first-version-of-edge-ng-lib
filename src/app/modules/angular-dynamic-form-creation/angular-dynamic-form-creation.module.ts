@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DynamicFormComponent } from './angular-dynamic-form-creation.component';
 import { AngularDynamicDocComponent } from './angular-dynamic-doc/angular-dynamic-doc.component';
+import { DemoMaterialModule } from 'src/app/demo.material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AngularDynamicDocComponent } from './angular-dynamic-doc/angular-dynami
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DemoMaterialModule
   ],
 
   exports:[

@@ -39,9 +39,11 @@ export class SpeedometerDocComponent implements OnInit {
 
     this.example = `
     Sample default example
+
     <app-speedo-meter class="xOTB-margin" (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
 
     Sample attribute example
+
     <app-speedo-meter class="xOTB-margin" [speedoMeterColor]="'red'" [wheelColor]="'green'" [max]="300"
     (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
     `;
