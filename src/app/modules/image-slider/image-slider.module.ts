@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ImagemainComponent } from './image-slider-main.component';
 import { ImageSliderDocComponent } from './image-slider-doc/image-slider-doc.component';
 import { ImageDotDirective } from './image-dot.directive';
+import { DemoMaterialModule } from 'src/app/demo.material.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ImageDotDirective } from './image-dot.directive';
   imports: [
     CommonModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    DemoMaterialModule
   ],
   exports:[
     ImagemainComponent,
