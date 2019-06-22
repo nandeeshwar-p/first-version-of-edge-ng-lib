@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ImagemainComponent } from './image-slider-main.component';
 import { ImageSliderDocComponent } from './image-slider-doc/image-slider-doc.component';
+import { ImageDotDirective } from './image-dot.directive';
 
 @NgModule({
   declarations: [
     ImagemainComponent,
     ImageSliderComponent,
-    ImageSliderDocComponent
+    ImageSliderDocComponent,
+    ImageDotDirective
   ],
   imports: [
     CommonModule,

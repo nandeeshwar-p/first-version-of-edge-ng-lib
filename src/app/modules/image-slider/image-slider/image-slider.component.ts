@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer, Input, AfterViewInit, AfterViewChecked, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, Input,  AfterViewChecked, Output, EventEmitter, ViewChild, ViewChildren, QueryList } from '@angular/core';
 
 
 @Component({
@@ -17,6 +17,11 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
   @Input() arrowColor: string = "#912525";
   @Input() arrowBgColor: string = "white";
   @Input() texColor: string = "#f2f2f2";
+  @Input() bottomButtonColor: string = "#bbb";
+  @Input() bottomButtonSelectedColor: string = "#717171";
+
+  @ViewChildren('spanDot') spanDot :QueryList<any>;
+
   private isFirstTime: boolean = true;
 
 
@@ -50,7 +55,7 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
 
     const slides = this.el.nativeElement.querySelectorAll('.xOTB-mySlides');
 
-    const dots = this.el.nativeElement.querySelectorAll('.xOTB-dot');
+    // const dots = this.el.nativeElement.querySelectorAll('.xOTB-dot');
 
     if (n > slides.length) {
 
@@ -68,20 +73,24 @@ export class ImageSliderComponent implements OnInit, AfterViewChecked {
       this.renderer.setElementStyle(slides[i], 'display', 'none');
     }
 
-    for (i = 0; i < dots.length; i++) {
+    // for (i = 0; i < dots.length; i++) {
 
-      dots[i].className = dots[i].className.replace(' xOTB-active', '');
+    //   dots[i].className = dots[i].className.replace(' xOTB-active', '');
 
-    }
+    // }
 
     if (slides.length !== 0) {
       this.renderer.setElementStyle(slides[this.slideIndex - 1], 'display', 'block');
       this.currentImage.emit(this.imagesData[this.slideIndex - 1]);
     }
 
-    if (dots.length !== 0) {
-      dots[this.slideIndex - 1].className += ' xOTB-active';
-    }
+    // if (dots.length !== 0) {
+    //   dots[this.slideIndex - 1].className += ' xOTB-active';
+    // }
+
+    let ele = this.spanDot.toArray();
+    let htmlEle:HTMLElement = ele[this.slideIndex -1].nativeElement;
+    htmlEle.click();
 
   }
   plusSlides(n) {
