@@ -15,9 +15,7 @@ import { AngularDynamicFormCreationModule } from './modules/angular-dynamic-form
 import { DynamicNgFormCreationFromJSONModule } from './modules/dynamic-ng-form-creation-from-json/dynamic-ng-form-creation-from-json.module';
 import { ImageSliderModule } from './modules/image-slider/image-slider.module';
 import { IndeterminateTreeStructureModule } from './modules/indeterminate-tree-structure/indeterminate-tree-structure.module';
-import { IndeterminateTreeDocModule } from './modules/indeterminate-tree-doc/indeterminate-tree-doc.module';
 import { ContextMenuModuleInfo } from './modules/context-menu/context-menu.module';
-import { ContextMenuDocModuleInfo } from './modules/context-menu-doc/context-menu-doc.module';
 import { DemoMaterialModule } from './demo.material.module';
 
 @NgModule({
@@ -39,9 +37,7 @@ import { DemoMaterialModule } from './demo.material.module';
     DynamicNgFormCreationFromJSONModule,
     ImageSliderModule,
     IndeterminateTreeStructureModule,
-    IndeterminateTreeDocModule,
     ContextMenuModuleInfo,
-    ContextMenuDocModuleInfo,
     DemoMaterialModule
   ],
   providers: [],

@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { QuickDatePickerModule } from './quick-date-picker/quick-date-picker.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContextMenuModule } from './context-menu/context-menu.module';
+import { ContextMenuDocComponent } from './context-menu-doc/context-menu-doc.component';
+import { DemoMaterialModule } from '../../demo.material.module';
+
 import { MenuComponent } from './c-menu.component';
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    ContextMenuDocComponent
   ],
   providers: [DatePipe],
 
@@ -16,10 +20,12 @@ import { MenuComponent } from './c-menu.component';
     CommonModule,
     BrowserModule, QuickDatePickerModule,
     ContextMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DemoMaterialModule
   ],
   exports:[
-    MenuComponent
+    MenuComponent,
+    ContextMenuDocComponent
   ]
 })
 export class ContextMenuModuleInfo { }
