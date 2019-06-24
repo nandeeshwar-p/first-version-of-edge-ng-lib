@@ -5,6 +5,7 @@ import { FirstComponentComponent } from './components/first-component/first-comp
 import { SecondComponentComponent } from './components/second-component/second-component.component';
 import { ThirdComponentComponent } from './components/third-component/third-component.component';
 import { ModelComponent } from './modal-window.component';
+import { ModalWindowDocComponent } from './modal-window-doc/modal-window-doc.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ModelComponent } from './modal-window.component';
     ModalComponent,
     FirstComponentComponent,
     SecondComponentComponent,
-    ThirdComponentComponent],
+    ThirdComponentComponent,
+    ModalWindowDocComponent],
   imports: [
     CommonModule
   ],
@@ -21,7 +23,8 @@ import { ModelComponent } from './modal-window.component';
     ModalComponent,
     FirstComponentComponent,
     SecondComponentComponent,
-    ThirdComponentComponent
+    ThirdComponentComponent,
+    ModalWindowDocComponent
   ]
 })
 export class ModalWindowModule { }
