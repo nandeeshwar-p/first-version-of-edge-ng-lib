@@ -1,21 +1,22 @@
 
 .xOTB-options-container{
     display:inline-block;
-    width:300px;
+    min-width:19em;
     height: 30px;
+    text-align: center;
 }
 .xOTB-options-container select{
-    width: 150px;
+    min-width: 9.5em;
     height: 25px;
 }
 .xOTB-sub-option-container{
     display: inline-block;
 }
 .xOTB-sub-option-container select{
-    width: 150px;
+    min-width: 9.5em;
     height: 25px;
 }
 .xOTB-delete-button{
-    width: 150px;
+    width: auto;
     height: 25px;
 }

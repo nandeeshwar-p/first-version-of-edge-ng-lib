@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-group',
+  selector: 'accordion-group',
   templateUrl: 'accordion-group.component.html',
   styleUrls: ['accordion.component.css']
 })

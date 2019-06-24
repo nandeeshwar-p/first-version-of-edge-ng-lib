@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import { HTML_CODES} from '../../constants/constants';
+import {IModalOptions} from '../../i-modal-window-options';
 
 @Component({
   selector: 'app-second-component',
@@ -8,6 +9,13 @@ import { HTML_CODES} from '../../constants/constants';
   encapsulation:ViewEncapsulation.None
 })
 export class SecondComponentComponent implements OnInit {
+
+  title:String="Title";
+  content:Object="Content";
+  isNextModalRequired:boolean=false;
+  modalWindowOptions:IModalOptions;
+
+  @Input() modalOptions:IModalOptions;
 
   @Input() modal;
 
@@ -20,6 +28,10 @@ export class SecondComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.modalWindowOptions = this.modalOptions.nextModalOptions;
+    this.title=this.modalOptions.title;
+    this.isNextModalRequired = this.modalOptions.isNextModalRequired;
+    this.content = this.modalOptions.content;
   }
 
   save() {

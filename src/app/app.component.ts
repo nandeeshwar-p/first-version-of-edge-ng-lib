@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ISelectorOptions } from './modules/multi-select-value-exclusion/i-drop-down-options';
+import { IModalOptions } from './modules/modal-window/i-modal-window-options';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +34,9 @@ export class AppComponent {
   isContextMenu:boolean=false;
   isExample4:boolean=false;
 
+  selectorOptions:ISelectorOptions;
+  modalOptions:IModalOptions;
+
   constructor(private _http: HttpClient){}
 
   ngOnInit() {
@@ -41,6 +46,51 @@ export class AppComponent {
     this.height = window.innerHeight - 87;
     // this.height = window.outerHeight;
     // this.position = 'fixed';
+
+    this.selectorOptions={
+      dropdownValues:[
+        { "mainKey": "Option A",
+          "subKeys": ["AA", "AB", "AC", "AD"]
+        },
+        {
+          "mainKey": "Option B",
+          "subKeys": ["BA", "BB", "BC", "BD"]
+        },
+        {
+          "mainKey": "Option C",
+          "subKeys": ["CA", "CB", "CC", "CD"]
+        },
+        {
+          "mainKey": "Option D",
+          "subKeys": ["DA", "DB", "DC", "DD"]
+        }],
+        title:"Select category and sub-category",
+        styles:{
+          containerStyle:"containerStyle",
+          headerStyle:"headerStyle",
+          mainSelectorStyle : "mainSelectorStyle",
+          mainOptionStyle : "mainOptionStyle",
+          subSelectorStyle : "subSelectorStyle",
+          subOptionStyle : "subOptionStyle"
+        },
+        extraSelectorsRequired:true
+    };
+    this.modalOptions={
+      title:"First Modal Window",
+      isNextModalRequired:true,
+      content:"Your Content Here",
+      nextModalOptions:{
+        title:"Second Modal Window",
+        isNextModalRequired:true,
+        content:"Your Content Here",
+        nextModalOptions:{
+          title:"Third Modal Window",
+          isNextModalRequired:false,
+          content:"Your Content Here",
+          nextModalOptions:null
+        }
+      }
+    }
   }
 
   onActionButtonClick(buttonName) {
@@ -339,6 +389,19 @@ getImages() {
 
 onAppDynamicForm(obj){
   console.log(obj);
+}
+
+deleteControl(event:any){
+  console.log("deleteControl",event);
+}
+addFormControl(event:any){
+  console.log("addFormControl",event);
+}
+onChangeSubOption(event:any){
+  console.log("onChangeSubOption",event);
+}
+onChange(event:any){
+  console.log("onChange",event);
 }
 
 }

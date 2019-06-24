@@ -3,8 +3,8 @@
     Click to open modal window
 </button>
 <app-modal #modal1 [current]="'modal1'" 
-    [previous]="null" [buttonGroup]="buttonGroup">
+    [previous]="null" [buttonGroup]="buttonGroup" [modalOptions]="modalWindowOptions">
     <!-- First Modal Component-->
-    <app-first-component [modal]="modal1">
+    <app-first-component [modal]="modal1" [modalOptions]="modalWindowOptions">
     </app-first-component>
 </app-modal>
