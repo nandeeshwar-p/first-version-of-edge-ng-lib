@@ -4,6 +4,7 @@ import { ExcludeSelectedValuePipe } from './exclude-selected-value.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MultiSelectValueExclusionComponent } from './multi-select-value-exclusion.component';
 import { MultiSelcttDocComponent } from './multi-selctt-doc/multi-selctt-doc.component';
+import { DemoMaterialModule } from 'src/app/demo.material.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MultiSelcttDocComponent } from './multi-selctt-doc/multi-selctt-doc.com
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    DemoMaterialModule
   ],
   exports:[MultiSelectValueExclusionComponent,
     ExcludeSelectedValuePipe,

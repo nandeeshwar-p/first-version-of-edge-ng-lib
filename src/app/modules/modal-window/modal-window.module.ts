@@ -6,6 +6,7 @@ import { SecondComponentComponent } from './components/second-component/second-c
 import { ThirdComponentComponent } from './components/third-component/third-component.component';
 import { ModelComponent } from './modal-window.component';
 import { ModalWindowDocComponent } from './modal-window-doc/modal-window-doc.component';
+import { DemoMaterialModule } from '../../demo.material.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ModalWindowDocComponent } from './modal-window-doc/modal-window-doc.com
     ThirdComponentComponent,
     ModalWindowDocComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    DemoMaterialModule
   ],
   exports:[
     ModelComponent,
