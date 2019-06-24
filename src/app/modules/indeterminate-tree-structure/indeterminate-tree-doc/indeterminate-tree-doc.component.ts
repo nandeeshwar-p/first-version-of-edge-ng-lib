@@ -51,10 +51,14 @@ export class IndetreeDocComponent implements OnInit {
     `;
 
     this.example = `
+    Sample default example
+
+    <app-tree-node (selectEvents)="handleSelection( $event )" [selectedNode]="selectedTreeNode"> </app-tree-node>   
+
     Sample attribute example
 
     <app-tree-node [node]="tree" image1="green.png" image2="../../assets/red.png" getColorCode="red" (selectEvents)="handleSelection( $event )"
-        [selectedNode]="selectedTreeNode"> </app-tree-node>
+    [selectedNode]="selectedTreeNode"> </app-tree-node>
     `;
   }
 }

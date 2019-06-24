@@ -28,7 +28,8 @@ export class ContextMenuDocComponent implements OnInit {
 
 
   constructor() {
-   }
+
+  }
 
   ngOnInit() {
 
@@ -38,9 +39,13 @@ export class ContextMenuDocComponent implements OnInit {
     `;
 
     this.example = `
+    Sample default example
+
+    <app-context-menu class="xOTB-margin" (optionClick)="click($event)" (closed)="click($event)"></app-context-menu>
+   
     Sample attribute example
-    
-    <app-context-menu [data]=data (optionClick)="click($event)" (closed)="click($event)"></app-context-menu>
+
+    <app-context-menu class="xOTB-margin" [data]=data (optionClick)="click($event)" (closed)="click($event)"></app-context-menu>
     
     `;
   }

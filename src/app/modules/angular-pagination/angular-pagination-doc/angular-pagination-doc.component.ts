@@ -18,7 +18,9 @@ export class PaginationDocComponent implements OnInit {
   private input_element_data: IinputElement[] = [
     {attribute: "items", datatype: 'object', default: "", description: 'It will provide the total no of items.'},
     {attribute: "pageSize", datatype: 'Number', default: "10", description: 'It will change page size.'},
-    {attribute: "maxPages", datatype: 'Number', default: "8", description: 'Here we can change the number of page to be displayed.'}
+    {attribute: "maxPages", datatype: 'Number', default: "8", description: 'Here we can change the number of page to be displayed.'},
+    {attribute: "setFontColor", datatype: 'String', default: "#337ab", description: 'It will set the font color.'},
+    
   ];
 
   private output_element_data: IoutputElement[] = [
@@ -40,9 +42,14 @@ export class PaginationDocComponent implements OnInit {
     `;
 
     this.example = `
+    Sample default example
+
+    <app-pagination-comp  class="xOTB-margin" (changePage)="onChangePage($event)"></app-pagination-comp>
+
     Sample attribute example
     
-    <app-pagination-comp [items]="results" [pageSize]="10" [maxPages]="8"   (changePage)="onChangePage($event)"></app-pagination-comp>
+    <app-pagination-comp class="xOTB-margin"  setFontColor="#337ab" [items]="results" [pageSize]="10" [maxPages]="8" 
+    (changePage)="onChangePage($event)"> </app-pagination-comp>
     `;
   }
 }

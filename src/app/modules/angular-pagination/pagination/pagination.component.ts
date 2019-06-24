@@ -8,6 +8,7 @@ import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChange
 export class PaginationComponent implements OnInit, OnChanges {
   @Input() items: Array<any>;
   @Output() changePage = new EventEmitter<any>(true);
+  @Input() setFontColor:string;
   @Input() initialPage = 1;
   @Input() pageSize = 10;
   @Input() maxPages = 5;
