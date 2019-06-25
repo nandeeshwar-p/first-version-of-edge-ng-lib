@@ -18,7 +18,6 @@ export class ContextMenuComponent implements OnInit {
   @Output() closed: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private elem: ElementRef) {}
-
   ngOnInit() {
     const self = this;
     self.elem.nativeElement.parentElement.addEventListener('click', function (e) {
@@ -56,6 +55,7 @@ export class ContextMenuComponent implements OnInit {
   }
 
   menuClick(event, data) {
+    console.log("In component click");
     this.optionClick.emit(data);
   }
 

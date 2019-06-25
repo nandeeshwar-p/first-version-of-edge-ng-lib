@@ -24,12 +24,6 @@ export class MenuComponent implements OnInit {
     },
     {
       name: 'option2'
-    },
-    {
-      name: 'option3'
-    },
-    {
-      name: 'option4'
     }
   ];
 
