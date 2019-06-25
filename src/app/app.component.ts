@@ -9,7 +9,7 @@ import { IModalOptions } from './modules/modal-window/i-modal-window-options';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- title = 'xotbEDGE';
+  title = 'xotbEDGE';
   height: any = 0;
   isDemo: boolean = true;
   isDocumentation: boolean = false;
@@ -38,9 +38,9 @@ export class AppComponent {
   modalOptions:IModalOptions;
 
   constructor(private _http: HttpClient){}
-  
-  ngOnInit(){
-   this.getFormInfo();
+
+  ngOnInit() {
+    this.getFormInfo();
     this.getImages();
     this.getFormInfoCustom();
     this.height = window.innerHeight - 87;
@@ -92,6 +92,53 @@ export class AppComponent {
       }
     }
   }
+
+  onActionButtonClick(buttonName) {
+    switch (buttonName) {
+      case 'demo':
+          this.onDemoClick();
+        break;
+      case 'documentation':
+          this.onDocumentaionClick();
+        break;
+      case 'others':
+          this.onOthersClick();
+        break;
+      case 'more':
+          this.onMoreClick();
+        break;
+    }
+  }
+
+  onSpeedMeter(value){
+    console.log('speed meter value '+value);
+  }
+
+  onDemoClick() {
+    this.isDemo = true;
+    this.isDocumentation = false;
+    this.isOthers = false;
+    this.isMore = false;
+  }
+  onDocumentaionClick() {
+    this.isDemo = false;
+    this.isDocumentation = true;
+    this.isOthers = false;
+    this.isMore = false;
+  }
+  onOthersClick() {
+    this.isDemo = false;
+    this.isDocumentation = false;
+    this.isOthers = true;
+    this.isMore = false;
+  }
+  onMoreClick() {
+    this.isDemo = false;
+    this.isDocumentation = false;
+    this.isOthers = false;
+    this.isMore = true;
+  }
+
 
   onSelectTab(selButton){
     this.isExpand = false;
@@ -356,4 +403,5 @@ onChangeSubOption(event:any){
 onChange(event:any){
   console.log("onChange",event);
 }
+
 }

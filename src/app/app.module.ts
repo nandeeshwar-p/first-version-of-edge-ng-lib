@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderEDGEComponent } from './header-edge/header-edge.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MultiSelectValueExclusionModule } from './modules/multi-select-value-exclusion/multi-select-value-exclusion.module';
 import { AccordionGroupModule } from './modules/accordion-group/accordion-group.module';
 import { ModalWindowModule } from './modules/modal-window/modal-window.module';
@@ -14,15 +17,16 @@ import { ImageSliderModule } from './modules/image-slider/image-slider.module';
 import { IndeterminateTreeStructureModule } from './modules/indeterminate-tree-structure/indeterminate-tree-structure.module';
 import { ContextMenuModuleInfo } from './modules/context-menu/context-menu.module';
 import { DemoMaterialModule } from './demo.material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderEDGEComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
     MultiSelectValueExclusionModule,
     AccordionGroupModule,
