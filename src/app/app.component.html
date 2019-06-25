@@ -61,7 +61,10 @@
 ></div>
 
 <router-outlet>
-<app-multi-select-value *ngIf="isMultiSelValue" class="xOTB-margin"></app-multi-select-value>
+ <app-multi-select-value *ngIf="isMultiSelValue" class="xOTB-margin" [selectorOptions]="selectorOptions"
+          (onChange)="onChange($event)" (onChangeSubOption)="onChangeSubOption($event)"
+          (addFormControl)="addFormControl($event)" (deleteControl)="deleteControl($event)">
+        </app-multi-select-value>
   <app-accordion-group *ngIf="isAcordionGroup" class="xOTB-margin"></app-accordion-group>
   <app-model *ngIf="isModelDialog" class="xOTB-margin"></app-model>
   <app-pagination *ngIf="isPagination" class="xOTB-margin"></app-pagination>
