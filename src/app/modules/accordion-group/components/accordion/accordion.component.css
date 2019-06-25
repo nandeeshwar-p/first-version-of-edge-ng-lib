@@ -35,15 +35,15 @@
       margin:0px 10px;
   }
 
-  .xOTB-open::after {
+  .xOTB-open::before {
     content: "\2295";
   }
 
-  .xOTB-close::after {
+  .xOTB-close::before {
     content: "\2296";
   }
 
-  .xOTB-icon::after {
+  .xOTB-icon::before {
     content: "\1F4C1";
   }
 
@@ -54,3 +54,13 @@
   .xoTB-mat-expansion-panel-header{
     flex-direction: row-reverse;
   }
+
+  :host /deep/ .mat-expansion-indicator {
+    align-content: flex-start;
+    align-items: flex-start;
+    
+  }
+  /* :host /deep/ .mat-expansion-panel-header > span.mat-content {
+    order: 2;    
+} */
+  

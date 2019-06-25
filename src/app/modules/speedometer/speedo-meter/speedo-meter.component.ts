@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Renderer2, ViewChild, OnInit} from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, ViewChild, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-speedo-meter',
@@ -39,6 +39,12 @@ export class SpeedoMeterComponent implements OnInit {
 
 
   @Input() max:number = 100;
+
+  @Output() selectedValue = new EventEmitter<number>();
+
+  onTextInputChaange(value) {
+    this.selectedValue.emit(value);
+  }
 
   constructor(private renderer: Renderer2) { }
 

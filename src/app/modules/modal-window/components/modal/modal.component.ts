@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, Input, ViewEncapsulation} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-
+import {IModalOptions} from '../../i-modal-window-options';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -17,10 +17,14 @@ export class ModalComponent implements OnInit {
 
   public visible = false;
   public visibleAnimate = false;
+  modalWindowOptions:IModalOptions;
 
+  @Input() modalOptions:IModalOptions;
   constructor(@Inject(DOCUMENT) private document: Document) { }
-
+  
   ngOnInit() {
+    console.log("parent modal",this.modalOptions);
+    this.modalWindowOptions = this.modalOptions;
   }
 
   public show(): void {

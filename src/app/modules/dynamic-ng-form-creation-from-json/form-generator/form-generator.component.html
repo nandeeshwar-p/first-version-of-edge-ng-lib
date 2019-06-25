@@ -1,56 +1,56 @@
-<div fxLayout="row"  fxFlexAlign="center" fxFlex="100">
-<div fxLayout="column" style="margin:auto;">
-    
-  <!-- <h3 class="xOTB-jumbotron xOTB-text-center">{{ formGeneratorName }}</h3> -->
-   <div *ngFor="let data of jsonFormData" [ngSwitch]="data.tag">
-    <div *ngSwitchCase="'input'">
-      <mat-form-field *ngIf="chechType(data)"
-               appearance="outline">
+<div fxLayout="row" fxFlexAlign="center" fxFlex="100">
+  <div fxLayout="column" style="margin:auto;">
+    <!-- <h3 class="xOTB-jumbotron xOTB-text-center">{{ formGeneratorName }}</h3> -->
+    <form #UserLogin="ngForm">
+    <div *ngFor="let data of jsonFormData" [ngSwitch]="data.tag" class="form-select"
+    fxLayoutGap="10px">
+      <div *ngSwitchCase="'input'"  >
+        <mat-form-field *ngIf="chechType(data)" appearance="outline">
           <mat-label>{{data?.label}}</mat-label>
-        <input matInput
-          [placeholder]="data.placeholder"
-          value="{{ data.value }}"
-          [type]="data.type">
-      </mat-form-field> 
-      <mat-radio-group
-        *ngIf="data.type == 'radio'"
-        aria-labelledby="example-radio-group-label"
-                [(ngModel)]="selRadioValue"
-      >
-        <mat-radio-button
-                  *ngFor="let radioValues of data.values;let i = index;"
-          [value]="radioValues"
-          [ngClass]="{'radio-bt':(i !== 0)}" 
-        >
-          {{ radioValues }}
-        </mat-radio-button>
-      </mat-radio-group>
+          <input matInput [placeholder]="data.placeholder"
+          type="password" *ngIf="data.type==='password'"
+          [(ngModel)]="data.value" [ngModelOptions]="{standalone: true}">
+          <input matInput [placeholder]="data.placeholder"
+          *ngIf="data.type!=='password'"
+          [(ngModel)]="data.value" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <mat-radio-group *ngIf="data.type == 'radio'"
 
- <div *ngIf="data.type == 'checkbox'">
-   <div fxLayout="row" fxLayoutGap="10px">
-      <div *ngFor="let checkValue of data.values" >
-          <mat-checkbox>{{ checkValue }}</mat-checkbox>
+          [(ngModel)]="data.selectedValue" [ngModelOptions]="{standalone: true}">
+          <mat-radio-button *ngFor="let obj of data.values;let i = index;"
+          [value]="obj.name"
+            [ngClass]="{'radio-bt':(i !== 0)}">
+            {{ obj.name }}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <div *ngIf="data.type == 'checkbox'">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <div *ngFor="let obj of data.values">
+                <mat-checkbox  [(ngModel)]='obj.selected'  [ngModelOptions]="{standalone: true}">
+                {{ obj.name }}
+              </mat-checkbox>
+            </div>
+          </div>
         </div>
-   </div>
-       
-      </div> 
-
-   
-    </div> 
-    <mat-form-field class="mat-field-sort" *ngSwitchCase="'select'">
+      </div>
+      <mat-form-field class="mat-field-sort form-select" *ngSwitchCase="'select'">
         <mat-label>{{ data?.label }}</mat-label>
-        <mat-select [(value)]="selected">
-          <mat-option>{{ data?.label }}</mat-option>
-          <ng-container *ngFor="let selectValues of data.values">
-            <mat-option value="selectValues"> {{ selectValues }}</mat-option>
+        <mat-select [(value)]="data.selectedValue">
+          <mat-option [value]="">{{ data?.label }}</mat-option>
+          <ng-container *ngFor="let obj of data.values">
+            <mat-option [value]="obj.value"> {{ obj.name }}</mat-option>
           </ng-container>
         </mat-select>
       </mat-form-field>
       <div *ngSwitchCase="'button'">
-          <div fxLayout="row">
-        <button mat-button>{{ data.value }}</button>
+        <div fxLayout="row">
+          <ng-container *ngFor="let btn of data.buttons">
+            <button mat-button (click)="onButtonClick(btn)">{{ btn.name }}</button>
+          </ng-container>
         </div>
       </div>
-   </div> 
-</div> 
+    </div>
+  </form>
+  </div>
 </div>

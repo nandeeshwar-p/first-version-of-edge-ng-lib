@@ -33,7 +33,7 @@ export class DynamicNgFormCrationFromJsonComponent implements OnInit {
 
   getFormInfo() {
 
-    this._http.get('./assets/formdata.json').subscribe((res: any) => {
+    this._http.get('/assets/formdata.json').subscribe((res: any) => {
 
       this.formJson = res;
 

@@ -36,7 +36,9 @@
   </div>
   <div class="xOTB-meterRead">
     <div class="xOTB-meterValue">{{ speedScore }}</div>
-    <input type="number" min='0' [max]='max' [(ngModel)]='speedScore' class="xOTB-form-control" (keyup)="getSpeed(speedScore)" (click)="getSpeed(speedScore)">
+    <input type="number" min='0' [max]='max' [(ngModel)]='speedScore'
+    class="xOTB-form-control" (keyup)="getSpeed(speedScore);onTextInputChaange(speedScore);"
+    (click)="getSpeed(speedScore);onTextInputChaange(speedScore);">
     <br/>
     <span class="xOTB-range">(Min: 0 | Max: {{max}})</span>
   </div>
