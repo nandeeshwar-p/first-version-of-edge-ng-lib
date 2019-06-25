@@ -4,7 +4,6 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ImagemainComponent } from './image-slider-main.component';
-import { ImageSliderDocComponent } from './image-slider-doc/image-slider-doc.component';
 import { ImageDotDirective } from './image-dot.directive';
 import { DemoMaterialModule } from 'src/app/demo.material.module';
 
@@ -12,7 +11,6 @@ import { DemoMaterialModule } from 'src/app/demo.material.module';
   declarations: [
     ImagemainComponent,
     ImageSliderComponent,
-    ImageSliderDocComponent,
     ImageDotDirective
   ],
   imports: [
@@ -24,7 +22,6 @@ import { DemoMaterialModule } from 'src/app/demo.material.module';
   exports:[
     ImagemainComponent,
     ImageSliderComponent,
-    ImageSliderDocComponent
   ]
 })
 export class ImageSliderModule { }

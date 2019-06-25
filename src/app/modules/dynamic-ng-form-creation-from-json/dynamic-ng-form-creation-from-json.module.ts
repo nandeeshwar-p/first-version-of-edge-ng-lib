@@ -7,13 +7,11 @@ import { FormGeneratorComponent } from './form-generator/form-generator.componen
 import { DynamicNgFormCrationFromJsonComponent } from './dynamic-ng-form-creation-from-json.component';
 import { DemoMaterialModule } from '../../demo.material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DynamicFormDocComponent } from './dynamic-form-doc/dynamic-form-doc.component';
 
 @NgModule({
   declarations: [
     DynamicNgFormCrationFromJsonComponent,
-    FormGeneratorComponent,
-    DynamicFormDocComponent
+    FormGeneratorComponent
   ],
   imports: [
     CommonModule,
@@ -24,8 +22,7 @@ import { DynamicFormDocComponent } from './dynamic-form-doc/dynamic-form-doc.com
   ],
   exports:[
     DynamicNgFormCrationFromJsonComponent,
-    FormGeneratorComponent,
-    DynamicFormDocComponent
+    FormGeneratorComponent
   ]
 })
 

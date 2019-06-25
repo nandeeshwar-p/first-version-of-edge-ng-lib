@@ -11,8 +11,7 @@ import { DemoMaterialModule } from 'src/app/demo.material.module';
 @NgModule({
   declarations: [
     DynamicFormComponent,
-    DynamicFormElemComponent,
-    AngularDynamicDocComponent
+    DynamicFormElemComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +25,6 @@ import { DemoMaterialModule } from 'src/app/demo.material.module';
   exports:[
     DynamicFormComponent,
     DynamicFormElemComponent,
-    AngularDynamicDocComponent
   ]
 })
 export class AngularDynamicFormCreationModule { }
